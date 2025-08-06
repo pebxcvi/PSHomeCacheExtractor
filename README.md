@@ -118,8 +118,56 @@ The batch script calls the following scripts, all of which are required for prop
 		
 ## Cache Breakdown
 
-**Example of the Cache structure :**
+**```CLANS```**
+- Clubhouse Furniture Layout XMLs & Clubhouse Save Data XMLs from older PlayStation®Home versions.
 
+**```GLOBALS```** 
+- Core files 
+    - SceneList XMLs
+    - ObjectCatalogue ( BAR OR HCDB )
+    - DefaultInventory ( BAR )
+    - Configs ( BAR OR SHARC )
+    - Profanity Dictionary ( BIN )
+    - Navigator/NavigatorRoot XMLs
+    - ServiceIds XMLs 
+    - RegionMap XMLs
+- Screen Link XMLs
+- Message Of The Day XMLs or TXTs
+- Commerce Point ( Store ) XMLs & thumbnails
+
+**```HTTP```**
+
+**```OBJECTDEFS```**
+
+- Objects ( SDAT OR BAR ) & their descriptor files ( ODC )
+
+**```OBJECTDYNAMIC```**
+- Dynamic Media from Objects
+    - Message Of The Day content
+    - Music
+    - Commerce Point ( Store ) thumbnails
+    - Object thumbnails
+    - Various Screen/Poster content ( Images )
+
+**```PROFILE```**
+								
+- Avatar headshots from the Save Data Service
+- PSN Profile Avatar Images
+- Misc Profile setting XMLs from older PlayStation®Home versions
+
+**```SCENES```**							
+- Scenes ( SDAT OR BAR ) & their descriptor files ( SDC )
+- Scene thumbnails
+- Scene Version XMLs
+
+**```VIDEO```**
+- Various Screen/Poster content ( Videos & Images )					
+
+**```WORLDMAP```**							
+- Navigator content 
+- Scene thumbnails 
+
+**Example of the Cache structure :**
 ```
 USRDIR/CACHE/   
 ├── SETTINGS
