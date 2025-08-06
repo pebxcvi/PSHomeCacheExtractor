@@ -1,0 +1,327 @@
+PSHome Cache Extractor
+
+Changes/Updates Log :
+
+V3.5.5
+
+- For Single and Unlimited Combined All custom query modes, i've added a way to query a single option without copying the cache afterwards. Prepend "Q" to each option.
+
+- Added/Adjusted a couple entries in the JREPLStrings.txt.
+
+- ! BRAND NEW : The querying of the INF log is now using a new python based exe ( custom_query.exe ) for Single and Unlimited Combined All custom query modes. It still uses the REPLStrings.txt; No changes needed!
+
+- ! BRAND NEW : Replaces the deinf.jar with a brand new C# based  INF decrypter and logger named "DEINF2.0". The decryption logic from Multiserver3's hometools was used.
+
+V3.5.0
+
+- ! BRAND NEW : The logging of object and scene sdats ( Option 1 ) are now using a new python based exe ( log_sdats.exe ) for all modes. 
+		- The fields of both logs have been adjusted slightly:
+				 - Removed the "Root folder" field.
+				 - Removed extensions from the file name field and put them into a entirely separate field.
+				 - Removed extensions from the unique file name field.
+				 - Added unique file name field for the scenes.
+				 - Added a field for "prod(2)"; Primarily for logging the correct value for betas, HDKs, and QAs caches.
+				 - Adjusted the live(2) to include the correct values for for betas, HDKs, and QAs caches.
+				 - Added field for the SDATA version. It searches for the corresponding DAT numbers using the INF hash within each CACHE/OBJECTDEFS and CACHE/SCENES folders.
+
+- ! BRAND NEW : The merging and cleaning up of the INF logs is now using a new python based exe ( merge_inflogs.exe ) for all modes. 
+		- Removed several string replacements for special characters !, & ,$, %, (, ), %20, and spaces  ; Logged as is. "%20" turns into a space.
+		- Fixed a few issues with some dates where it logged weird strings instead of setting the date to null.
+
+- ! BRAND NEW : The logging of thumbnails ( Option 0 ) is now using a new python based exe ( log_thumbnails.exe ). This fixes some string related bugs in the batch script version. Also faster.
+
+- ! BRAND NEW : The Unlimited Cache Combined Mode ( Regular ( Option 2 ) and Verbose ( Option 5 ) ) is now using a new python based exe ( cache_copy_combined.exe ) for the copying of cache.
+		- The python script from the file_analysis.exe was integrated into the cache_copy_combined.exe, so eventually, file_analysis.exe will get depreciated.
+		
+- Adjusted some strings in JREPLStrings.txt for custom queries ( The JPG and MP4 queries ); Added a "all media" query. 
+
+- Added a third directory where the BIN folder can get picked up.
+
+- For Unlimted Cache Seperate Mode, adjusted Option 9 to create a log_CACHE_VERS.log for each cache.
+
+- For Unlimted Cache Seperate Mode, added an override ( 1O ) to option 1. Entering 1O will delete log_OBJECTDEFS_ALL.log and log_SCENES_ALL.log within each cache.
+
+V3.4.0
+- ! BRAND NEW : The Single Cache Mode ( Regular ( Option 2 ), Verbose ( Option 5 ), and Custom Query ( Option 3 ) ) and the Unlimited Cache Separate Mode ( Regular ( Option 2 ) and Verbose ( Option 4 ) ) 
+		are now using a new python based exe ( cache_copy_single.exe ) for the copying of cache.
+	- The python script from the file_analysis.exe was integrated into the cache_copy_single.exe, so eventually, file_analysis.exe will get depreciated.
+
+V3.3.4
+- Fixed bug in file_analysis.exe when sdat file size is 0 and it tries to get sdata version.
+
+V3.3.3
+- Added something to auto delete the DATALOG.DAT when creating INF logs. These contain owners IP and PSN ID.
+
+V3.3.2
+- Added fields for COREDATA.BAR/COREDATA.SHARC SHA1S in logs_CACHE_VERS.log for all modes.
+- For Cache Copy in Unlimited Cache Combined Mode, I added check for corrupt commerce point xml files.
+- In Unlimited Cache Combined Mode, fixed jrepl bug when replacing inf date strings in logs_CDNContent.xml. It was resulting in an empty string.
+- In single cache mode, added check_for_new_objects.exe that checks for new objects after creating log_OBJECTDEFS_ALL.log. A OBJECT_QUERY.txt is needed.
+- Minor adjustments to JREPLStrings. Had a mixeup and added an entry.
+
+V3.3.1
+- Adjusted search/replace strings for 29-36 in BIN\JREPLStrings.txt for custom copy code.
+- Fixed typo in echo for custom copy combined.
+
+V3.3
+- Updated custom copy code for AVATARPFP in unlimited cache mode.
+- Added FOLDERDATES to custom copy code in unlimited cache mode. set to be used for RSS feed xml files.
+- Added SCREENS, HELPTEXT, CONFIG XML, CLUBHOUSE XML, MOTD-90B TXT, MOTD-90B XML, MOTD-F14 TXT, MOTD-F14 XML, NEWSVIEWER-EB6 TXT, NEWSVIEWER-EB6 XML to custom copy code in unlimited cache mode.
+- Adjusted some strings in BIN\JREPLStrings.txt for custom copy code.
+=
+V3.2
+- Updated custom copy code for single cache mode from unlimited cache mode.
+
+V3.1
+ - Typo correction for custom copy combined commerce point xmls.
+ - Fix for custom copy separate.
+
+V3.0
+
+ - Updated file_analysis.exe with a more advanced video corruption check. creates log as well.
+
+ - Added the cache name to Objects, Scenes, and Thumbnails logs for Single Cache Mode and Unlimited Cache Separate Mode.
+
+ - For Single Cache Mode, split Cache Analysis and Cache Copy into two separate functions so I can prompt an option to skip Cache Analysis.
+
+ - For all three modes (Single Cache Mode, Unlimited Cache Combined Mode, and Unlimited Cache Separate Mode),
+
+		 > file_analysis.exe is now being used.
+
+		 > merged the Verbose Mode and the Create Logs and Copy Cache Mode into one function for easier updating.
+
+		 > modified sdats with SDATA V3.3 will now go into a new folder called "modified"
+
+		 > overhauled the copying process.
+
+				~ added file name fix for these crackle images that don't have the correct extension.
+
+		 		~ implemented a counter function for unique dupes (-1, -2, -3, etc). :INCREMENTAL_COPY.
+
+		 		~ heavily dependent on the SHA1 of files.
+
+		 		~ for all corrupted files, there will be no more unique dupes (-1, -2, -3, etc). it'll always copy out the higher file size under the original file name.
+
+		 		~ there will only be unique dupes (-1, -2, -3, etc) for files that pass through the corruption checks; assumed to not be corrupted at that stage.
+
+ - For Unlimited Cache Combined Mode, implemented a more complex system for certian types of files.
+
+		> for odc/sdc files,
+
+				 ~ unique dupes (-1, -2, -3, etc) will NOT be copied.
+
+				 ~ check sha1 first. if SHA1 different,
+
+					> it will check against the INF dates and copy out only if the INF date is newer. there will be a tracker via a log file that will put and x ones that get updated.
+
+		> for xml, txt, hcdb, bar, sharc, and bin files,
+
+				~ check sha1 first. if SHA1 different,
+
+					> the file name will be adjusted. the INF dates will be appended to the file names. if INF date is null, it will use the originl file name.
+
+					> unique dupes (-1, -2, -3, etc) from the adjusted file names will be copied. it'll copy out only if the INF date is newer. there will be a tracker via a log file that will put and x ones that get updated.
+
+					> if the INF date is newer, it will rename the file that's already there with the INF date, then it will copy out the new file with the newer INF date as the originl file name.
+
+						Example - >
+
+							secure.cprod.scee.com/CommercePoints/MarketPlace/E/VshirtsCP.xml|31Jul2013|AceEliminator
+
+							copies out first iteration of the file as VshirtsCP.xml. after that, if that file path already exists, it checks sha1 and INF date against the file that's already there.
+
+							if sha1 is different and the INF date is newer, it will rename the file that's already there to VshirtsCP_2013-07-21.xml THEN it will copy out the new file as VshirtsCP.xml. ( replacing it essentially )
+
+							if VshirtsCP_2013-07-21.xml already exists, it will actually loop through all the unique dupes (-1, -2, -3, etc) of VshirtsCP_2013-07-21.xml (including the initial file of VshirtsCP_2013-07-21.xml) and check SHA1s.
+
+							if SHA1 is not found, it will copy the file out as VshirtsCP_2013-07-21-1.xml, VshirtsCP_2013-07-21-2.xml, etc depending on the existing counter.
+
+		> for all other files,
+
+				~ check sha1 first. if SHA1 different and file is greater than the previous file, it'll copy the file with the original file name.
+
+				~ unique dupes (-1, -2, -3, etc) from the original file name will be copied.
+
+				~ it will actually loop through all the unique dupes (-1, -2, -3, etc) of the file (including the original file) and check SHA1s. if SHA1 is not found, it will copy the unique dupes (-1, -2, -3, etc)
+
+
+V2.6.7
+- Upgraded custom cache copy for both Single and Unlimited Cache Combined modes.
+	a) No more copy pasting jrepl commands. It is now all done via a config file where it will provide choices. You'll be able to choose multiple. Can also choose all to query only with or without copying out cache.
+
+- Fixed bug where cmd would crash if you entered spaces as a choice on the main menus.
+
+- Changed the display logs in the cmd when cache is getting copied (for all modes)
+
+- Add support to rename sdats/odcs/thumbnails for the upgraded custom cache copy for Single and Unlimited Cache Combined modes.
+
+- Added third party tool called file_analysis.exe (python) that will assist in analyzing files as they get copied out. The file_analysis.exe is not fully implemented yet in all modes.
+
+	implemented in modes:
+
+	- Single Cache Mode
+
+	- Unlimited Cache Combined (custom cache copy)
+
+	it currently
+
+  a) gets extension (.EXT)
+  b) gets file size
+  c) gets sha1
+  d) gets sdat sdata version (sdats only)
+  e) determines number of bytes missing at the very end of file (realized this isn't really useful after implementing)
+  f) image corruption check (png, jpg, jpeg, dds) using pillow ( 1 = corrupt, 0 = not corrupt)
+  g) video corruption check (mp4, m4v) using ffprobe.exe ( 1 = corrupt, 0 = not corrupt)
+
+- Changed where the deinf.jar is called. The batch script will now come with a BIN folder where the deinf.jar will reside along with the file_analysis.exe and it's dependencies. The BIN folder can reside in either
+	ALLCACHES\BIN\ or ALLCACHES\CACHETEST\BIN\
+
+V2.6.6
+- Added support for renaming object sdats for option 3 after ARCHIVE folder is created.
+
+V2.6.5
+- Fixed bug from previous update for dates that are "null"
+
+V2.6.4
+- For Unlimited Cache Combined, it will now compare the dates of the object ODCs and only overwrite the existing ODC if the date is greater than the existing ODC. The log of ODCs will be in logs_ODC.xml and any logged with x are ones that were overwritten. This uses JREPL.BAT. It should create it for you before it starts.
+- Fixed bug for Unlimited Cache Combined when renaming scee, scea, scej, and sceasia folders
+
+V2.6.3
+- Added file:// as a string to remove when cleaning up the final inf log
+- For Single cache mode (options 2, 4, & 5), I've opened up the cache analysis to GLOBALS and WORLDMAP (It was previously only analyizing SCENES, OBJECTDEFS, VIDEOS, OBJECTHUMBS, and OBJECTDYNAMIC on Verbose mode (option 5) and only SCENES/OBJECTDEFS on options 2 & 4)
+- For Single cache and Unlimited Cache Combined modes (options 2, 4, & 5), added support for bar files in the cache analysis
+- For Unlimited Cache Combined mode (options 2, 4, & 5), fixed bug in the cache analysis regarding picking up pngs with bad inf files.
+
+V2.6.2
+- ignored RESERVED.cyberducksegment folder when removing reserve
+
+v2.6.1
+- Added support for qa/dev entries in object log
+- Added folder renames for scee, scea, scej, and sceasia folders within the ARCHIVE folder after cache is copied.
+
+v2.6
+- The option to grab cache versions is now picking up LASTRUN.TXT and PARAM.SFO and is now able to be done in single cache mode. It'll pick up version in LASTRUN.TXT, version in PARAM.SFO, home NP ID in PARAM.SFO, and cache NP folder name.
+
+v2.5.9
+- Fixed object log for Unlimited Cache Mode Separate. Wasn't logging live/live2
+- For Single cache mode, added warning for the handful of inf files that stop inflog from logging the rest of the folder
+
+v2.5.8
+- Added cache name to logs_ALL.txt for Single and Unlimited Separate Cache Mode
+
+V2.5.7
+- For both Unlimited Cache Combined and Separate Mode, I added the ability to create a log for cache versions. It will only pick it up if it has a LASTRUN.TXT in the USRDIR folder.
+- For scene logs, I added a field for live/live2 and support for cdev/dev/cqa sdats/bars.
+
+V2.5.6
+- Added additional checks for sdat corruption for Unlimited Cache Combined mode. It checks the sizes of the sdats. If the current sdat that was copied into the ARCHIVE folder is greater than the new sdat that will overwrite the current one, do not overwrite.
+
+V2.5.5
+- Reworked cache analysis feature for Unlimited Cache Combined mode. The analysis now ...
+	> Incorporates all cache folders.
+    > Goes cache by cache instead of all together. This is because many have the same INF number but have different dates. Mostly for the GLOBALS and WORLDMAP.
+    > All analysis logs for this mode now go into ANALYSISLOGS. Within ANALYSISLOGS. You will see log_ANALYSIS.log for each cache in a folder called log_ANALYSIS.
+    > Within the ARCHIVE folder, the folder structure in "unknown" is now split by each individual cache folder.
+- Added prompt to skip analysis for options 2 and 4.
+
+V.2.5.4
+- Added override choices for unlimited cache modes 1O (LETTER O) and 2O (LETTER O). This will skip the INF log creation, check, and merge. Goes directly to the unlimited mode menu choices. Saves time when you already did the INF log creation and merge.
+- Fixed bug for unlimited cache combined mode. It was using a variable that didn't exist during cache copy which slowed it down.
+- Added a custom cache copy option for single cache and unlimited cache combined modes.
+
+Uses JREPL. Based on your JREPL query match (THIS WILL NEED TO BE EDITED BASED ON WHAT YOU WANT TO SAVE OUT), it will create a custom logs_ALL.txt with those matching the wildcards given. There are also /INC /EXC parameters for JREPL that you could use. You may also edit the custom logs_ALL.txt before it starts to copy.
+
+For unlimited cache combined mode, I added some examples for handling duplicates. The examples in there are for .jpg and .xml. Will append -# to end of file.
+
+Examples of JREPL query code:
+https://github.com/Thdub/Optimize_NextGen/blob/master/Files/Utilities/JREPL.bat (line 406 for /INC, line 322 for /EXC - syntax similar to jscript
+
+Single Cache Mode:  (line 1084 in batch file) :
+CALL JREPL "(.*scenes.*)(.*sdat.*)" "$txt=$1+$2" /JMATCHQ /I /XSEQ /F "%SRC1%INFLOGS\%LOGTXT%" /O "%SRC1%INFLOGS\%CUSTOMINFLOG%"
+CALL JREPL "(.*c.home.*)(.*/objects.*)" "$txt=$1+$2" /JMATCHQ /I /XSEQ /EXC "/.*ObjectCatalogue.*/i" /F "%SRC1%INFLOGS\%LOGTXT%" /O "%SRC1%INFLOGS\%CUSTOMINFLOG%"
+CALL JREPL "(.*c.home.*)(.*/scenes.*)" "$txt=$1+$2" /JMATCHQ /I /XSEQ /F "%SRC1%INFLOGS\%LOGTXT%" /O "%SRC1%INFLOGS\%CUSTOMINFLOG%"
+CALL JREPL "(.*avatar.*)(.*jpg.*)" "$txt=$1+$2" /JMATCHQ /I /XSEQ /EXC "/.*e.home.*/i" /F "%SRC1%INFLOGS\%LOGTXT%" /O "%SRC1%INFLOGS\%CUSTOMINFLOG%"
+CALL JREPL "(.*navi.*)(.*xml.*)" "$txt=$1+$2" /JMATCHQ /I /XSEQ /F "%SRC1%INFLOGS\%LOGTXT%" /O "%SRC1%INFLOGS\%CUSTOMINFLOG%"
+CALL JREPL "(.*ObjectCatalogue.*)" "$txt=$1" /JMATCHQ /I /XSEQ /F "%SRC1%INFLOGS\%LOGTXT%" /O "%SRC1%INFLOGS\%CUSTOMINFLOG%"
+CALL JREPL "(.*Config_.*)" "$txt=$1" /JMATCHQ /I /XSEQ /F "%SRC1%INFLOGS\%LOGTXT%" /O "%SRC1%INFLOGS\%CUSTOMINFLOG%"
+CALL JREPL "(.*ProfanityDictionary.*)(.*.BIN.*)" "$txt=$1+$2" /JMATCHQ /I /XSEQ /F "%SRC1%INFLOGS\%LOGTXT%" /O "%SRC1%INFLOGS\%CUSTOMINFLOG%"
+CALL JREPL "(.*90B121DD-33C94336-83D3F23C-78699CE5.*)" "$txt=$1" /JMATCHQ /I /XSEQ /F "%SRC1%INFLOGS\%LOGTXT%" /O "%SRC1%INFLOGS\%CUSTOMINFLOG%"
+CALL JREPL "(.*F14C0D58-A3934173-99C50269-84DCB78C.*)" "$txt=$1" /JMATCHQ /I /XSEQ /F "%SRC1%INFLOGS\%LOGTXT%" /O "%SRC1%INFLOGS\%CUSTOMINFLOG%"
+CALL JREPL "(.*EB6ECA9F-389B4140-96F12563-BE7264F8.*)" "$txt=$1" /JMATCHQ /I /XSEQ /F "%SRC1%INFLOGS\%LOGTXT%" /O "%SRC1%INFLOGS\%CUSTOMINFLOG%"
+CALL JREPL "(.*ServiceIDs.*)(.*.xml.*)" "$txt=$1+$2" /JMATCHQ /I /XSEQ /F "%SRC1%INFLOGS\%LOGTXT%" /O "%SRC1%INFLOGS\%CUSTOMINFLOG%"
+CALL JREPL "(.*CommercePoints.*)(.*.xml.*)" "$txt=$1+$2" /JMATCHQ /I /XSEQ /F "%SRC1%INFLOGS\%LOGTXT%" /O "%SRC1%INFLOGS\%CUSTOMINFLOG%"
+CALL JREPL "(.*TSSExtract.*)" "$txt=$1" /JMATCHQ /I /XSEQ /F "%SRC1%INFLOGS\%LOGTXT%" /O "%SRC1%INFLOGS\%CUSTOMINFLOG%"
+CALL JREPL "(.*VERS_.*)(.*xml.*)" "$txt=$1+$2" /JMATCHQ /I /XSEQ /F "%SRC1%INFLOGS\%LOGTXT%" /O "%SRC1%INFLOGS\%CUSTOMINFLOG%"
+CALL JREPL "(.*config.xml.*)" "$txt=$1" /JMATCHQ /I /XSEQ /F "%SRC1%INFLOGS\%LOGTXT%" /O "%SRC1%INFLOGS\%CUSTOMINFLOG%"
+CALL JREPL "(.*c.home.*)(.*/scenes.*)" "$txt=$1+$2" /JMATCHQ /I /XSEQ /F "%SRC1%INFLOGS\%LOGTXT%" /O "%SRC1%INFLOGS\%CUSTOMINFLOG%"
+
+TO GET EMPTY logs_ALL_Custom.txt FILE, DO THIS - CALL JREPL "(.*\q.*)" "$txt=$1" /JMATCHQ /I /XSEQ /F "%SRC1%INFLOGS\%LOGTXT%" /O "%SRC1%INFLOGS\%CUSTOMINFLOG%"
+
+Unlimited Cache Combined Mode: (line 5415 in batch file) :
+CALL JREPL "(.*avatar.*)(.*jpg.*)" "$txt=$1+$2" /JMATCHQ /I /XSEQ /EXC "/.*e.home.*/i" /F "%SRC1%%LOGTXT%" /O "%SRC1%%CUSTOMINFLOG%"
+CALL JREPL "(.*navi.*)(.*xml.*)" "$txt=$1+$2" /JMATCHQ /I /XSEQ /F "%SRC1%%LOGTXT%" /O "%SRC1%%CUSTOMINFLOG%"
+CALL JREPL "(.*scenelist.*)" "$txt=$1" /JMATCHQ /I /XSEQ /F "%SRC1%%LOGTXT%" /O "%SRC1%%CUSTOMINFLOG%"
+CALL JREPL "(.*TSSExtract.*)" "$txt=$1" /JMATCHQ /I /XSEQ /F "%SRC1%%LOGTXT%" /O "%SRC1%%CUSTOMINFLOG%"
+CALL JREPL "(.*VERS_.*)(.*xml.*)" "$txt=$1+$2" /JMATCHQ /I /XSEQ /F "%SRC1%%LOGTXT%" /O "%SRC1%%CUSTOMINFLOG%"
+CALL JREPL "(.*ObjectCatalogue.*)" "$txt=$1" /JMATCHQ /I /XSEQ /F "%SRC1%%LOGTXT%" /O "%SRC1%%CUSTOMINFLOG%"
+CALL JREPL "(.*Config_.*)" "$txt=$1" /JMATCHQ /I /XSEQ /F "%SRC1%%LOGTXT%" /O "%SRC1%%CUSTOMINFLOG%"
+CALL JREPL "(.*scenes.*)(.*sdat.*)" "$txt=$1+$2" /JMATCHQ /I /XSEQ /F "%SRC1%%LOGTXT%" /O "%SRC1%%CUSTOMINFLOG%"
+CALL JREPL "(.*VERS_.*)(.*xml.*)(.*SplicewaveScenes.*)" "$txt=$1+$2+$3" /JMATCHQ /I /XSEQ /F "%SRC1%%LOGTXT%" /O "%SRC1%%CUSTOMINFLOG%"
+CALL JREPL "(.*config.xml.*)" "$txt=$1" /JMATCHQ /I /XSEQ /F "%SRC1%%LOGTXT%" /O "%SRC1%%CUSTOMINFLOG%"
+CALL JREPL "(.*ProfanityDictionary.*)(.*.BIN.*)" "$txt=$1+$2" /JMATCHQ /I /XSEQ /F "%SRC1%%LOGTXT%" /O "%SRC1%%CUSTOMINFLOG%"
+CALL JREPL "(.*CommercePoints.*)(.*.xml.*)" "$txt=$1+$2" /JMATCHQ /I /XSEQ /F "%SRC1%%LOGTXT%" /O "%SRC1%%CUSTOMINFLOG%"
+CALL JREPL "(.*ServiceIDs.*)(.*.xml.*)" "$txt=$1+$2" /JMATCHQ /I /XSEQ /F "%SRC1%%LOGTXT%" /O "%SRC1%%CUSTOMINFLOG%"
+CALL JREPL "(.*object.*)(.*odc.*)(.*2014.*)" "$txt=$1+$2+$3" /JMATCHQ /I /XSEQ /F "%SRC1%%LOGTXT%" /O "%SRC1%%CUSTOMINFLOG%"
+CALL JREPL "(.*90B121DD-33C94336-83D3F23C-78699CE5.*)" "$txt=$1" /JMATCHQ /I /XSEQ /F "%SRC1%%LOGTXT%" /O "%SRC1%%CUSTOMINFLOG%"
+CALL JREPL "(.*F14C0D58-A3934173-99C50269-84DCB78C.*)" "$txt=$1" /JMATCHQ /I /XSEQ /F "%SRC1%%LOGTXT%" /O "%SRC1%%CUSTOMINFLOG%"
+CALL JREPL "(.*EB6ECA9F-389B4140-96F12563-BE7264F8.*)" "$txt=$1" /JMATCHQ /I /XSEQ /F "%SRC1%%LOGTXT%" /O "%SRC1%%CUSTOMINFLOG%"
+CALL JREPL "(.*e.home.*)(.*/RSS_Feeds.*)" "$txt=$1+$2" /JMATCHQ /I /XSEQ /F "%SRC1%%LOGTXT%" /O "%SRC1%%CUSTOMINFLOG%"
+CALL JREPL "(.*c.home.*)(.*/objects.*)" "$txt=$1+$2" /JMATCHQ /I /XSEQ /EXC "/.*ObjectCatalogue.*/i" /F "%SRC1%%LOGTXT%" /O "%SRC1%%CUSTOMINFLOG%"
+CALL JREPL "(.*c.home.*)(.*/scenes.*)" "$txt=$1+$2" /JMATCHQ /I /XSEQ /F "%SRC1%%LOGTXT%" /O "%SRC1%%CUSTOMINFLOG%"
+CALL JREPL "(.*homeps3-content.online.scee.com.*)(.*/objects.*)" "$txt=$1+$2" /JMATCHQ /I /XSEQ /EXC "/.*ObjectCatalogue.*/i" /F "%SRC1%%LOGTXT%" /O "%SRC1%%CUSTOMINFLOG%"
+CALL JREPL "(.*homeps3-content.online.scee.com.*)(.*/scenes.*)" "$txt=$1+$2" /JMATCHQ /I /XSEQ /F "%SRC1%%LOGTXT%" /O "%SRC1%%CUSTOMINFLOG%"
+CALL JREPL "(.*/Screens/.*)" "$txt=$1" /JMATCHQ /I /XSEQ /F "%SRC1%%LOGTXT%" /O "%SRC1%%CUSTOMINFLOG%"
+
+TO GET EMPTY logs_ALL_Custom.txt FILE, DO THIS - CALL JREPL "(.*\q.*)" "$txt=$1" /JMATCHQ /I /XSEQ /F "%SRC1%%LOGTXT%" /O "%SRC1%%CUSTOMINFLOG%"
+
+V2.5.3
+- For Unlimited Cache Separate Mode, an issue was fixed that occured during the count of INFLOGs before the merge. It was stalling and taking forever to do so. It is now a bit faster to check the INFLOG count.
+- For Unlimited Cache Separate Mode, it now supports double folders for the entire mode so for folders like Rew's Cache/Rew's Cache/NPIA00005.
+- For Unlimited Cache Separate Mode, the final INF log now goes into the INFLOGS folder. If this was ran previously, it will move the final INF log into the INFLOGS folder.
+- For all modes, you now have the option to rename thumbnails after the caches have been copied. Object thumbnails will be renamed as UUID_T###(S or L).png Scene thumbnails will be renamed SCENEID_T###(S or L).png.
+- For all modes, you can now output logs for object thumbnails. The log looks similar to the object/scene logs.
+
+V2.5.2
+- For VERBOSE MODE only, I opened up the cache analysis to VIDEOS, OBJECTHUMBS, and OBJECTDYNAMIC with the single and combined all modes.
+
+V2.5.1
+- Remove :// in Final INF log when merging. (notably web://)
+
+V2.5
+		**unlimited separate mode still needs updating to include the analysis step**
+		**the analysis step is only targeting the objectdefs and scene folders for now**
+
+- for single and unlimited combined mode, i added an extra analysis step on the cache to check for the following:
+    - sdats with no inf files
+    - sdats with bad inf that the deinf does not log
+    - sdats with 0 bytes
+- moved separate INF logs into folders.
+- can use verbose mode now to run just the analysis without copying entire cache.
+- added live/live2 as a column on the object sdat log.
+- when renaming objects in the archive folder, it will append _T000 to sdats that don't have it.
+
+V2.0.1
+- fixed issue with definf.jar paths with spaces.
+
+V2
+- strips port numbers when cleaning up final INF log.
+- changes $(env) to either cdev or cprod when cleaning up final INF log.
+- added option for all modes to rename object sdats and object odcs to UUID_T### after extracting cache to cdn structure.
+- made the unlimited cache separate mode better at detecting if a log and/or a cache was or wasn't created or copied.
+- unlimited cache separate mode now only supports double folded caches up to inf log creation. **everything after that, is not supported for double folded caches.**
+
+V.1.1.1
+- Strips https://, http://, and tss:// when cleaning up final INF log.
+
+V1.1
+- Fixed issue where the loop would be infinite if CACHE folder was missing a folder (not equal to 10)
