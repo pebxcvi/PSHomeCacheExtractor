@@ -9,7 +9,7 @@
 ...
 ## Overview
 
-For each data file within a PlayStation®Home CACHE, there is an associated "INF" file of the same name. Each INF file includes the data file’s original path, file name, and, in many cases, a date.
+For each data file within a PlayStation®Home Cache, there is an associated "INF" file of the same name. Each INF file includes the data file’s original path, file name, and, in many cases, a date.
 
 Some INF files are encrypted, while others from older versions of PlayStation®Home are already decrypted.
 
@@ -34,7 +34,7 @@ Discord -> https://dsc.gg/homelaboratory
 
 In all scenarios, it looks for ```\NPIA00005\USRDIR\CACHE```. 
 
-It does support HDK ```NPIA00010``` and ```NPEA00013``` beta caches as well just in case.
+It does support HDK ```NPIA00010``` and ```NPEA00013``` Beta Caches as well just in case.
 
 ```Examples:
 Rew's Cache\NPIA00005\USRDIR\CACHE
@@ -47,8 +47,8 @@ TSFRJ Home Cache 1.80\NPIA00005\USRDIR\CACHE
 Caches/     
 ├── BIN/    
 ├── Cache Folder/   
-│   └── NPIA00005/  
-│       └── CACHE_EXTRACTORVX.X.X.BAT  ← CLICK ME   
+│	└── NPIA00005/  
+│	└── CACHE_EXTRACTORVX.X.X.BAT  ← CLICK ME   
 
 **Unlimited Cache Mode - Combined :**
 
@@ -107,5 +107,94 @@ The batch script calls the following scripts, all of which are required for prop
 
 4) BIN\JREPL\JREPL.BAT - Batch/Jscript Hybrid
    - Created by dbenham https://stackoverflow.com/users/1012053/dbenham )
-	
 		
+## Cache Breakdown
+
+**Example of the Cache structure :**
+
+```
+USRDIR/CACHE/   
+├── SETTINGS
+│   
+├── CLANS/  
+│ └──STATE  
+│ └──RESERVED  
+│   
+├── GLOBALS/    
+│ └──1125735730_INF  
+│ └──1125735730_DAT.XML  
+│ └──STATE      
+│ └──RESERVED 
+│  
+├── HTTP/   
+│ └──STATE  
+│ └──RESERVED
+│      
+├── OBJECTDEFS/     
+│ └──10122905_INF   
+│ └──10122905_DAT.ODC   
+│ └──11028318_INF   
+│ └──11028318_DAT.sdat  
+│ └──STATE  
+│ └──RESERVED 
+│  
+├── OBJECTDYNAMIC/  
+│ └──220756008_INF  
+│ └──220756008_DAT.DDS  
+│ └──STATE  
+│ └──RESERVED
+│   
+├── OBJECTTHUMBS/   
+│ └──15244468_INF   
+│ └──15244468_DAT.PNG   
+│ └──STATE  
+│ └──RESERVED
+│   
+├── PROFILE/    
+│ └──1491203350_INF  
+│ └──1491203350_DAT.JPG     
+│ └──STATE    
+│ └──RESERVED 
+│  
+├── SCENES/     
+│ └──25932842_INF      
+│ └──25932842_DAT.SDC   
+│ └──45060018_INF      
+│ └──45060018_DAT.sdat  
+│ └──STATE     
+│ └──RESERVED
+│   
+├── VIDEO/      
+│ └──1038606639_INF        
+│ └──1038606639_DAT.MP4  
+│ └──STATE      
+│ └──RESERVED
+│   
+├── WORLDMAP/   
+│ └──657739169_INF  
+│ └──657739169_DAT.DDS  
+│ └──STATE  
+│ └──RESERVED   
+```		
+
+**Known file extensions in Cache :**
+
+```
+.sdat
+.bar
+.odc
+.sdc
+.hcdb
+.txt
+.xml
+.mp4
+.m4v
+.mp3
+.dds
+.png
+.jpg
+.jpeg
+.bin
+.do
+.hsml
+.dat
