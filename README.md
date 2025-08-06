@@ -34,7 +34,7 @@ Discord -> https://dsc.gg/homelaboratory
 
 https://github.com/pebxcvi/PSHomeCacheDepot
 
-A vast majority of PlayStation®Home raw caches donated by it's former players are archived publicly in this google drive with logs included. ( [Google Drive](https://drive.google.com/drive/u/1/folders/1Wuk2GNsXOZ_qLJFqtg0gExRpZqxL3sec) )
+A vast majority of PlayStation®Home raw caches are archived publicly in this google drive with logs included. ( [Google Drive](https://drive.google.com/drive/u/1/folders/1Wuk2GNsXOZ_qLJFqtg0gExRpZqxL3sec) )
 
 You can find individual download links here. ( [Google Sheets](https://docs.google.com/spreadsheets/d/1uR7IRGjkl_n5CMBua6zIQV5EKXdSk8_D-sTDoJGMe7c/edit?usp=sharing) ) 
 
