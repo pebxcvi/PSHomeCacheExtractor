@@ -1,5 +1,13 @@
 # PSHome Cache Extractor
+
 ## PlayStation®Home Cache Logger
+...
+
+> [!IMPORTANT]
+> Download Release -> https://github.com/pebxcvi/PSHomeCacheExtractor/releases/tag/v3.5.5
+
+...
+## Overview
 
 For each data file within a PlayStation®Home CACHE, there is an associated "INF" file of the same name. Each INF file includes the data file’s original path, file name, and, in many cases, a date.
 
@@ -22,7 +30,7 @@ The PlayStation®Home Cache Logger was put together by Rew from the Home Laborat
 
 Discord -> https://dsc.gg/homelaboratory
 
-## Usage Overview
+## Usage
 
 In all scenarios, it looks for ```\NPIA00005\USRDIR\CACHE```. 
 
