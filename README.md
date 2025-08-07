@@ -119,6 +119,8 @@ The batch script calls the following scripts, all of which are required for prop
 		
 ## Cache Breakdown
 
+### Definitions
+
 **```CLANS```**
 - Clubhouse Furniture Layout XMLs & Clubhouse Save Data XMLs from older PlayStation®Home versions.
 
@@ -168,7 +170,7 @@ The batch script calls the following scripts, all of which are required for prop
 - Navigator content 
 - Scene thumbnails 
 
-### Cache Structure
+### Structure
 
 **Example of the Cache structure :**
 ```
@@ -235,7 +237,7 @@ USRDIR/CACHE/
 │ └──STATE  
 │ └──RESERVED   
 ```		
-### Cache File Extensions
+### File Extensions
 
 **Known file extensions in Cache :**
 
