@@ -42,7 +42,7 @@ TSFRJ Home Cache 1.80\NPIA00005\USRDIR\CACHE
 ```
 **Scenarios it supports :**
 
-**Single Cache Mode :**
+### Single Cache Mode
 ```
 Caches/     
 ├── BIN/    
@@ -50,7 +50,14 @@ Caches/
 │ └── NPIA00005/  
 │ └── CACHE_EXTRACTORVX.X.X.BAT  ← CLICK ME   
 ```
-**Unlimited Cache Mode - Separate :**
+<img src="https://github.com/pebxcvi/PSHomeCacheExtractor/blob/main/SingleCacheMode.png" alt="SingleCacheMode.png" width="500">
+
+### Unlimited Cache Mode
+
+<img src="https://github.com/pebxcvi/PSHomeCacheExtractor/blob/main/UnlimitedCacheMode.png" alt="UnlimitedCacheMode.png" width="500">
+
+### Unlimited Cache Mode - Separate
+
 ```
 Caches/     
 ├── BIN/    
@@ -60,7 +67,9 @@ Caches/
 ├── TSFRJ Home Cache 1.80/TSFRJ Home Cache 1.80/NPIA00005/  
 └── CACHE_EXTRACTORVX.X.X.BAT  ← CLICK ME
 ```
-**Unlimited Cache Mode - Combined :**
+<img src="https://github.com/pebxcvi/PSHomeCacheExtractor/blob/main/UnlimitedCacheModeSeparate.png" alt="UnlimitedCacheModeSeparate.png" width="500">
+
+### Unlimited Cache Mode - Combined
 ```
 Caches/  
 ├── BIN/    
@@ -70,6 +79,8 @@ Caches/
 ├── TSFRJ Home Cache 1.80/TSFRJ Home Cache 1.80/NPIA00005/  
 └── CACHE_EXTRACTORVX.X.X.BAT  ← CLICK ME   
 ```
+<img src="https://github.com/pebxcvi/PSHomeCacheExtractor/blob/main/UnlimitedCacheModeCombined.png" alt="UnlimitedCacheModeCombined.png" width="500">
+
 ## Public Cache Archive
 
 https://github.com/pebxcvi/PSHomeCacheDepot
