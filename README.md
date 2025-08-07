@@ -51,25 +51,15 @@ TSFRJ Home Cache 1.80\NPIA00005\USRDIR\CACHE
 **Scenarios it supports :**
 
 **Single Cache Mode :**
-
+```
 Caches/     
 ├── BIN/    
 ├── Cache Folder/   
-│	└── NPIA00005/  
-│	└── CACHE_EXTRACTORVX.X.X.BAT  ← CLICK ME   
-
-**Unlimited Cache Mode - Combined :**
-
-Caches/  
-├── BIN/    
-├── Rew's Cache/PIA00005/  
-├── Rew's Cache/Rew's Cache/PIA00005/  
-├── TSFRJ Home Cache 1.80/NPIA00005/  
-├── TSFRJ Home Cache 1.80/TSFRJ Home Cache 1.80/NPIA00005/  
-└── CACHE_EXTRACTORVX.X.X.BAT  ← CLICK ME   
-
+│ └── NPIA00005/  
+│ └── CACHE_EXTRACTORVX.X.X.BAT  ← CLICK ME   
+```
 **Unlimited Cache Mode - Separate :**
-
+```
 Caches/     
 ├── BIN/    
 ├── Rew's Cache/NPIA00005/  
@@ -77,6 +67,17 @@ Caches/
 ├── TSFRJ Home Cache 1.80/NPIA00005/  
 ├── TSFRJ Home Cache 1.80/TSFRJ Home Cache 1.80/NPIA00005/  
 └── CACHE_EXTRACTORVX.X.X.BAT  ← CLICK ME
+```
+**Unlimited Cache Mode - Combined :**
+```
+Caches/  
+├── BIN/    
+├── Rew's Cache/PIA00005/  
+├── Rew's Cache/Rew's Cache/PIA00005/  
+├── TSFRJ Home Cache 1.80/NPIA00005/  
+├── TSFRJ Home Cache 1.80/TSFRJ Home Cache 1.80/NPIA00005/  
+└── CACHE_EXTRACTORVX.X.X.BAT  ← CLICK ME   
+```
 
 ## Supplemental Scripts
 
