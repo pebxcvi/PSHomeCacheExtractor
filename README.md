@@ -168,6 +168,8 @@ The batch script calls the following scripts, all of which are required for prop
 - Navigator content 
 - Scene thumbnails 
 
+### Cache Structure
+
 **Example of the Cache structure :**
 ```
 USRDIR/CACHE/   
@@ -233,6 +235,7 @@ USRDIR/CACHE/
 │ └──STATE  
 │ └──RESERVED   
 ```		
+### Cache File Extensions
 
 **Known file extensions in Cache :**
 
