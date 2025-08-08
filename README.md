@@ -125,7 +125,7 @@ The batch script calls the following scripts, all of which are required for prop
    - Info -> https://www.ffmpeg.org/ffprobe.html
 
 4) BIN\JREPL\JREPL.BAT - Batch/Jscript Hybrid
-   - Created by dbenham https://stackoverflow.com/users/1012053/dbenham
+   - Created by dbenham -> https://stackoverflow.com/users/1012053/dbenham
 		
 ## Cache Breakdown
 
