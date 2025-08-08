@@ -106,9 +106,9 @@ The batch script calls the following scripts, all of which are required for prop
    - The DEINF2.0.exe uses Net 6 -> https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-6.0.428-windows-x64-installer
     
 2) Python based EXEs built from the CX-Freeze Python library.
-    - CX-Freeze Info -> https://cx-freeze.readthedocs.io/en/stable/ )
+    - CX-Freeze Info -> https://cx-freeze.readthedocs.io/en/stable/
     - Python 3.11 itself gets bundled into the BIN\PSHomeCacheTools\lib\ folder.
-    - The Pillow Python Library is also utilized here. ( https://pypi.org/project/pillow/ )
+    - The Pillow Python Library is also utilized here -> https://pypi.org/project/pillow/
 	
     - BIN\PSHomeCacheTools\   
     ├── file_analysis.exe   
@@ -122,10 +122,10 @@ The batch script calls the following scripts, all of which are required for prop
 
 3) BIN\ffprobe.exe
    - Download -> https://github.com/BtbN/FFmpeg-Builds/releases
-   - Info -> https://www.ffmpeg.org/ffprobe.html )
+   - Info -> https://www.ffmpeg.org/ffprobe.html
 
 4) BIN\JREPL\JREPL.BAT - Batch/Jscript Hybrid
-   - Created by dbenham https://stackoverflow.com/users/1012053/dbenham )
+   - Created by dbenham https://stackoverflow.com/users/1012053/dbenham
 		
 ## Cache Breakdown
 
