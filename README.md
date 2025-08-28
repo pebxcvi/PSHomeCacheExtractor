@@ -4,7 +4,7 @@
 ...
 
 > [!IMPORTANT]
-> Download Release -> https://github.com/pebxcvi/PSHomeCacheExtractor/releases/tag/v3.5.5
+> Download Release -> https://github.com/pebxcvi/PSHomeCacheExtractor/releases/tag/v3.5.6
 
 ...
 ## Overview
