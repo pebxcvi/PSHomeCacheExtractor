@@ -3989,7 +3989,7 @@ IF "!INFURLROOTDIR!"=="!INFURLFILE!" (
 
 
 IF EXIST "%LOCALPATH%\override.tmp" (
-	FOR /F "TOKENS=*" %%G IN ('DIR /B /S "%SRC1%!F!\!C!_DAT.*" 2^>NUL ^|^| ECHO !REMSPACE!	!C!_INF	!D!^>^>"%SRC1%ARCHIVE\!FOLDER!\!F!\%NOFILES%"') DO (
+	FOR /F "TOKENS=*" %%G IN ('DIR /B /S "%SRC1%!F!\!C!_DAT.*" 2^>NUL ^|^| ECHO !F!	!C!_INF	!D!^>^>"%SRC1%ARCHIVE\!FOLDER!\!F!\%NOFILES%"') DO (
 		SET "G=%%G"
 		SET "H=%%~NXG"
 		SET "J=!G:%SRC1%=!"
@@ -4107,7 +4107,7 @@ IF EXIST "%LOCALPATH%\override.tmp" (
 		)
 	)
 ) ELSE (
-	FOR /F "TOKENS=*" %%G IN ('DIR /B /S "%SRC1%!F!\!C!_DAT.*" 2^>NUL ^|^| ECHO !REMSPACE!	!C!_INF	!D!^>^>"%SRC1%ARCHIVE\!FOLDER!\%NOFILES%"') DO (
+	FOR /F "TOKENS=*" %%G IN ('DIR /B /S "%SRC1%!F!\!C!_DAT.*" 2^>NUL ^|^| ECHO !F!	!C!_INF	!D!^>^>"%SRC1%ARCHIVE\!FOLDER!\%NOFILES%"') DO (
 		SET "G=%%G"
 		SET "H=%%~NXG"
 		SET "J=!G:%SRC1%=!"
@@ -5979,7 +5979,7 @@ ECHO:(.*\.jpg.*)	$txt=$1	/c\.home^|SaveDataService\/avatar.*\.jpg^|Avatar-.*\.jp
 ECHO:(.*\.jpeg.*)	$txt=$1	/.*c.home.*/i	JPEG
 ECHO:(.*\.(mp4^|mp3^|m4v^|dds^|png^|jpg^|jpeg).*)	$txt=$1	/c\.home^|^^alpha\.lootgear\.com\/moviedb.*\.mp4^|SaveDataService\/avatar.*\.jpg^|Avatar-.*\.jpg/i	MEDIA
 ECHO:(.*\.hsml.*)	$txt=$1	/.*c.home.*/i	HSTML
-ECHO:(.*\.do.*)	$txt=$1	/.*c.home.*/i	PACONTROLLERS
+ECHO:(.*\.do.*)	$txt=$1	/c\.home^|^www\.doublesixgames\.com.*\.(mp4^|dds)/i	PACONTROLLERS
 ECHO:(.*/helptext/.*)	$txt=$1	'$^^'	HELPTEXT
 ECHO:(.*(NPWR00432^|NPIA00005^|/clan/).*)	$txt=$1	'$^^'	CLUBHOUSE XML
 ECHO:(.*objects/(90B121DD-33C94336-83D3F23C-78699CE5^|F14C0D58-A3934173-99C50269-84DCB78C^|EB6ECA9F-389B4140-96F12563-BE7264F8).*\.(txt^|xml).*)	$txt=$1	/.*c.home.*/i	MOTD AND NEWSVIEWER
@@ -6022,6 +6022,7 @@ ECHO:C5015B95BE03A8F6021F6E1EA566E6D3F6B879C4
 ECHO:E0F61DADE38BE2DA99CF2AD885C8B628BE294A35
 ECHO:55983984C7AA017FE98C2743ACE79BD47E0461C3
 ECHO:F298A0A046FD5EAE2973DDA02100DA653DC5D30C
+ECHO:E36F75539151A0ECA484018150F2C134920F49B5
 EXIT /B
 
 :CREATE_exceptions_modified

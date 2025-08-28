@@ -163,10 +163,45 @@ class DEINF
                 {
                     errorLines.Add($"[ERROR] {Path.GetFileName(file)} has 0 bytes");
                 }
-                else if (fileInfo.Length > 2048)
+                else if (fileInfo.Length > 1536)
                 {
-                    errorLines.Add($"[ERROR] {Path.GetFileName(file)} is a sdat");
+                    try
+                    {
+                        byte[] header = new byte[16];
+                        using (var fs = new FileStream(file, FileMode.Open, FileAccess.Read))
+                        {
+                            fs.Read(header, 0, header.Length);
+                        }
+                
+                        string headerText = System.Text.Encoding.ASCII.GetString(header);
+                
+                        if (headerText.Contains("DDS"))
+                        {
+                            errorLines.Add($"[ERROR] {Path.GetFileName(file)} is a DDS");
+                        }
+                        else if (headerText.Contains("PNG"))
+                        {
+                            errorLines.Add($"[ERROR] {Path.GetFileName(file)} is a PNG");
+                        }
+                        else if (headerText.Contains("NPD"))
+                        {
+                            errorLines.Add($"[ERROR] {Path.GetFileName(file)} is a SDAT");
+                        }
+                        else if (headerText.Contains("ftypmp42"))
+                        {
+                            errorLines.Add($"[ERROR] {Path.GetFileName(file)} is a VIDEO");
+                        }
+                        else
+                        {
+                            errorLines.Add($"[ERROR] {Path.GetFileName(file)} is not a INF");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        errorLines.Add($"[ERROR] Failed to read header from {Path.GetFileName(file)} — {ex.Message}");
+                    }
                 }
+
                 else
                 {
                     if (saveFiles)

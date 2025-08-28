@@ -160,7 +160,7 @@ if __name__ == "__main__":
     video_corruption_check = "NA"
     if file_extension.lower() in ['.mp4', '.m4v']:
         # Set up logging only if an MP4 file is found
-        log_file_path = 'video_analysis_log.txt'
+        log_file_path = 'log_VIDEO_ANALYSIS.log'
 
         logging.basicConfig(filename=log_file_path, level=logging.INFO, format='%(message)s')
 

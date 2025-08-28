@@ -170,6 +170,10 @@ def analyze_video(file_path, ffprobe_path, log_path=None, inf_url=None):
         return 1
 
     return 0
+    
+XML_ENCRYPTED = {
+    "SceneList.xml"
+}
 
 ROOT_TAGS = [
     "commerce_point", "XML", "xml", "REGIONINFO", "rss", "RSS", "LOCALISATION",
@@ -203,7 +207,7 @@ def is_xml_corrupt(filepath):
 
 # === FILE ANALYSIS FUNCTIONS END ===
 
-def get_file_info(file_path, ffprobe_path, archive_root, queryname, cachename, inf_url=None):
+def get_file_info(file_path, ffprobe_path, archive_root, queryname, cachename, inf_url=None, special_path=None):
     ext = get_file_extension(file_path)
     ext_lc = ext.lower()
     
@@ -238,8 +242,12 @@ def get_file_info(file_path, ffprobe_path, archive_root, queryname, cachename, i
 
     xmlcor = "NA"
     if ext_lc == '.xml':
-        xmlcor = is_xml_corrupt(file_path)
-
+        fname = Path(special_path).name if special_path else Path(file_path).name
+        if fname.lower() in (name.lower() for name in XML_ENCRYPTED):
+            xmlcor = 0
+        else:
+            xmlcor = is_xml_corrupt(file_path)
+        
     return {
         'ext': ext,
         'size': size,
@@ -249,6 +257,7 @@ def get_file_info(file_path, ffprobe_path, archive_root, queryname, cachename, i
         'vidcor': vidcor if vidcor != "NA" else -1,
         'xmlcor': xmlcor if xmlcor != "NA" else -1
     }
+
 
 def ensure_dir(path):
     dbg("Ensuring directory exists: %s", path)
@@ -464,7 +473,7 @@ def process_inf_line(line, archive_root, search_root, queryname, cachename, ffpr
                  dbg("Failed to detect type for extensionless file %s: %s", file, e)
     
         normal_target = construct_full_target_path(archive_root, queryname, cachename, special_path)
-        info = get_file_info(str(file), ffprobe_path, archive_root, queryname, cachename, inf_url=inf_url)
+        info = get_file_info(str(file), ffprobe_path, archive_root, queryname, cachename, inf_url=inf_url, special_path=special_path)
         if not info:
             dbg("Skipping file %s due to failed info retrieval", file)
             continue

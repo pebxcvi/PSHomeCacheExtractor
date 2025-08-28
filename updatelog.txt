@@ -2,6 +2,20 @@ PSHome Cache Extractor
 
 Changes/Updates Log :
 
+V3.5.6
+
+- Adjusted error prints in DEINF2.0 for when a INF is not an INF.
+
+- Added entry to the exceptions_corrupted.txt for Unlimited Combined All mode.
+
+- In file_analysis.exe, I changed the corrupted video log file to match that of the other python scripts. log_VIDEO_ANALYSIS.log.
+
+- Adjusted PACONTROLLERS entry in JREPLStrings.txt.
+
+- Adjusted log_NO_FILE_FOR_INF.log for Unlimited Combined All custom query mode.
+
+- Excluded encrypted SceneList.xml from the is_xml_corrupt function. Gave a false positive.
+
 V3.5.5
 
 - For Single and Unlimited Combined All custom query modes, i've added a way to query a single option without copying the cache afterwards. Prepend "Q" to each option.
