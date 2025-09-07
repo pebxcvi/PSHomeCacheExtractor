@@ -2,7 +2,6 @@ from cx_Freeze import setup, Executable
 import os
 import sys
 
-# Common build options for all executables
 build_exe_options = {
     "packages": ["os", "sys", "hashlib", "PIL", "subprocess", "logging", "re", "shutil", "datetime", "pathlib"],
     "excludes": [
@@ -13,20 +12,17 @@ build_exe_options = {
         "html", "http", "xml", "pydoc", "test", "asyncio", "concurrent", "ctypes"
     ],
     "include_files": [],
-    "optimize": 2  # optimization level: 2 is best for release
+    "optimize": 2
 }
 
-# Determine the base for Windows
 base = "Console" if sys.platform == "win32" else None
 
-# Shared metadata to make files look legit
 common_metadata = dict(
     base=base,
-    icon=None,  # add .ico path if you have one
+    icon=None,
     copyright="Home Laboratory (c)2025 PSHOME Revival Project",
 )
 
-# Define all executables
 executables = [
     Executable("file_analysis.py", target_name="file_analysis.exe", **common_metadata),
     Executable("check_for_new_objects.py", target_name="check_for_new_objects.exe", **common_metadata),
