@@ -149,6 +149,13 @@ The batch script calls the following scripts, all of which are required for prop
 - Commerce Point ( Store ) XMLs & thumbnails
 
 **```HTTP```**
+- Used prior to OBJECTDYNAMIC in super old versions
+- Dynamic Media from Objects
+    - Message Of The Day content
+    - Music
+    - Commerce Point ( Store ) thumbnails
+    - Object thumbnails
+    - Various Screen/Poster content ( Images )
 
 **```OBJECTDEFS```**
 
@@ -270,3 +277,83 @@ USRDIR/CACHE/
 .do
 .hsml
 .dat
+```
+
+## Encryption Overview
+...
+
+> [!NOTE]
+> Code -> https://github.com/GitHubProUser67/MultiServer3/tree/Super-Branch/AuxiliaryServices/HomeTools
+
+...
+
+1) INF files
+    - Encrypted with Libsecure Blowfish using a unique keyset
+
+2) SceneList.XML
+    - Encrypted with Libsecure Blowfish using a unique keyset
+
+3) Scene Descriptor Files ( SceneSDATName_TXXX.SDC )
+    - XML; Encrypted with Libsecure Blowfish using a unique keyset
+
+4) Object Descriptor Files ( Object_TXXX.ODC )
+    - XML; Encrypted with Libsecure Blowfish using a unique keyset
+
+5) Navigator_*region*.XML
+    - Encrypted prior to April 2011 with Libsecure Blowfish using a unique keyset
+    - Not encrypted from Mid-April 2011 onwards
+
+6) ProfanityDictionary_*lang*.BIN
+    - Binary BIN from what we beleive to be from a program apart of the PS3 SDK
+    - Earlier Profanity Dictionaries were XXTEA encrypted with a static key and served directly from the scee-home.playstation.net and secure.cprod.homeps3.online.scee.com domains
+    - Newer Profanity Dictionaries were AES128 encrypted .EBIN's and served via the profanityfilter API updater service under the update-prod.pfs.online.scee.com domain. The API was configured within the TSS file
+
+7) ObjectCatalogue_5_*region*.HCDB
+    - SQLite database ( .SQL )
+    - Encrypted with Libsecure Blowfish using a unique keyset and compressed with EdgeLzma ( SEGS )
+    - Used from Mid-November 2010 onwards
+
+8) ObjectCatalogue.BAR
+    - BAR Archive; Encrypted with Libsecure Blowfish using a unique keyset
+    - The BAR Archive contains a single XML
+    - Used prior to November 2010
+
+9) Scenes and Objects
+
+    **`BAR Archive :`**
+
+    - Not encrypted; No Sony NPDRM encryption
+    - Only found in HDK/QA versions
+    - LUA files inside were not encrypted
+
+    **`SDAT Archive :`**
+
+    - **BAR Archive with Sony NPDRM encryption only; Used prior to October 2013**
+
+        - SDATA V2.4 and V2.2
+
+        - From version 1.35 onwards, LUA files were encrypted using an Encryption Proxy layer that applied Blowfish-based encryption and EdgeZlib compression. It was indicated by a flag in the TOC ( Table of Contents )
+
+    - **BAR Archive with Sony NPDRM and SHARC encryption; Used Mid-October 2013 onwards**
+
+        - SDATA V4.0 and V2.4
+
+        - SHARC encryption consists of three layers :
+
+        **`Layer 1:`** AES256 encryption applied to both the Header ( Metadata section at the beginning of each archive ) and the TOC ( Table of Contents; lookup table containing metadata such as file offsets, sizes, compression types, along with the Keys and IVs used for the custom XTEA encryption ). The Header is decrypted first using AES256, followed by the TOC. The TOC is then decrypted with the same AES key and an incremented IV to reveal each file's Key and IV used in the custom XTEA encryption
+
+        **`Layer 2:`** Custom XTEA encryption applied individually to each file using its own unique Key and IV ( Values retrieved from the decrypted TOC )
+
+        **`Layer 3:`** EdgeZlib compression applied to each file's data prior to encryption
+
+        - LUA files were encrypted in an additional Blowfish-based layer indicated by a flag in the TOC
+
+11) Configs_*lang*.SHARC
+    - BAR Archive with SHARC encryption described above
+    - Used Mid-September 2013 onwards
+    - Contains a ProfanityDictionary_*lang*.BIN encrypted with Libsecure XXTEA using a unique keyset
+
+12) Configs_*lang*.BAR
+    - BAR Archive; Not encrypted
+    - Used prior to September 2013
+    - Contains a ProfanityDictionary_*lang*.BIN encrypted with Libsecure XXTEA using a unique keyset
