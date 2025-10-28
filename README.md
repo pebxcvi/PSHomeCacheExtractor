@@ -448,6 +448,8 @@ USRDIR/CACHE/
 <details>
 <summary><b>DEVELOPER - HDK</b></summary>
 -
+
+<div style="max-width:950px; overflow-x:auto; font-size:90%; line-height:1.3;">
 	
 **`BAR ARCHIVES WITH NO ENCRYPTION :`**
 | Version | Title ID | Archives | Cache References | PKG References | 
@@ -466,6 +468,7 @@ USRDIR/CACHE/
 | 1.32 | NPEA00013 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, DEV_ARCHIVE.BAR, POOL_BOWLING.BAR, SPURIOUS.BAR, DYNFILES.BAR, OBJECTS_DEFAULT_INVENTORY.BAR |SingStar Developer|
 | 1.00 | NPEA00013 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, OBJECTS_DEV.BAR, POOL_BOWLING.BAR, SPURIOUS.BAR, DYNFILES.BAR, JAVA.BAR, OBJECTS_DEFAULT_INVENTORY.BAR, CHESS_DRAUGHTS.BAR |Dusty_2|
 
+</div>
 </details>
 
 <details>
