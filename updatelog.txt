@@ -5,6 +5,7 @@ Changes/Updates Log :
 V3.5.7
 
 - In log_thumbnails.py, I added new entries in the SCENE_PATTERNS array.
+- Added a field in the log_CACHE_VERS.log that logs all the CORE FILES. 
 
 V3.5.6
 
