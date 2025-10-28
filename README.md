@@ -422,6 +422,11 @@ USRDIR/CACHE/
 <summary><b>RETAIL - LIMITED TIME BETA</b></summary>
 -
 	
+**`BAR ARCHIVES WITH SHARC ENCRYPTION`**
+| Version | Title ID | Archives |
+|----------|-----------|----------|
+| 1.82 | NPEA00013 | COREDATA.SHARC, SHADERS.SHARC, SCENE_APARTMENT.SHARC |
+
 **`BAR ARCHIVES WITH NO ENCRYPTION :`**
 | Version | Title ID | Archives |
 |----------|-----------|----------|
