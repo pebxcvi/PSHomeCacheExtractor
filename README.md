@@ -350,17 +350,17 @@ USRDIR/CACHE/
 
     - LUA files were encrypted in an additional Blowfish-based layer indicated by a flag in the TOC
 
-### 11) Configs_*lang*.SHARC
+### 10) Configs_*lang*.SHARC
 - BAR Archive with SHARC encryption described above
 - Used Mid-September 2013 onwards
 - Contains a ProfanityDictionary_*lang*.BIN encrypted with Libsecure XXTEA using a unique keyset
 
-### 12) Configs_*lang*.BAR
+### 11) Configs_*lang*.BAR
 - BAR Archive; Not encrypted
 - Used prior to September 2013
 - Contains a ProfanityDictionary_*lang*.BIN encrypted with Libsecure XXTEA using a unique keyset
    
-### 13) Core Files
+### 12) Core Files
 
 <details>
 <summary><b>RETAIL - OPEN BETA</b></summary>
