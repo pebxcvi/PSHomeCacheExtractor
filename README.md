@@ -287,58 +287,59 @@ USRDIR/CACHE/
 
 ...
 
-1) INF files
-    - Encrypted with Libsecure Blowfish using a unique keyset
+### 1) INF files
+- Encrypted with Libsecure Blowfish using a unique keyset
 
-2) SceneList.XML
-    - Encrypted with Libsecure Blowfish using a unique keyset
+### 2) SceneList.XML
+- Encrypted with Libsecure Blowfish using a unique keyset
 
-3) Scene Descriptor Files ( SceneSDATName_TXXX.SDC )
-    - XML; Encrypted with Libsecure Blowfish using a unique keyset
+### 3) Scene Descriptor Files ( SceneSDATName_TXXX.SDC )
+- XML; Encrypted with Libsecure Blowfish using a unique keyset
 
-4) Object Descriptor Files ( Object_TXXX.ODC )
-    - XML; Encrypted with Libsecure Blowfish using a unique keyset
+### 4) Object Descriptor Files ( Object_TXXX.ODC )
 
-5) Navigator_*region*.XML
-    - Encrypted prior to April 2011 with Libsecure Blowfish using a unique keyset
-    - Not encrypted from Mid-April 2011 onwards
+- XML; Encrypted with Libsecure Blowfish using a unique keyset
 
-6) ProfanityDictionary_*lang*.BIN
-    - Binary BIN from what we beleive to be from a program apart of the PS3 SDK
-    - Earlier Profanity Dictionaries were XXTEA encrypted with a static key and served directly from the scee-home.playstation.net and secure.cprod.homeps3.online.scee.com domains
-    - Newer Profanity Dictionaries were AES128 encrypted .EBIN's and served via the profanityfilter API updater service under the update-prod.pfs.online.scee.com domain. The API was configured within the TSS file
+### 5) Navigator_*region*.XML
+- Encrypted prior to April 2011 with Libsecure Blowfish using a unique keyset
+- Not encrypted from Mid-April 2011 onwards
 
-7) ObjectCatalogue_5_*region*.HCDB
-    - SQLite database ( .SQL )
-    - Encrypted with Libsecure Blowfish using a unique keyset and compressed with EdgeLzma ( SEGS )
-    - Used from Mid-November 2010 onwards
+### 6) ProfanityDictionary_*lang*.BIN
+- Binary BIN from what we beleive to be from a program apart of the PS3 SDK
+- Earlier Profanity Dictionaries were XXTEA encrypted with a static key and served directly from the scee-home.playstation.net and secure.cprod.homeps3.online.scee.com domains
+- Newer Profanity Dictionaries were AES128 encrypted .EBIN's and served via the profanityfilter API updater service under the update-prod.pfs.online.scee.com domain. The API was configured within the TSS file
 
-8) ObjectCatalogue.BAR
-    - BAR Archive; Encrypted with Libsecure Blowfish using a unique keyset
-    - The BAR Archive contains a single XML
-    - Used prior to November 2010
+### 7) ObjectCatalogue_5_*region*.HCDB
+- SQLite database ( .SQL )
+- Encrypted with Libsecure Blowfish using a unique keyset and compressed with EdgeLzma ( SEGS )
+- Used from Mid-November 2010 onwards
 
-9) Scenes and Objects
+### 8) ObjectCatalogue.BAR
+- BAR Archive; Encrypted with Libsecure Blowfish using a unique keyset
+- The BAR Archive contains a single XML
+- Used prior to November 2010
 
-    **`BAR Archive :`**
+### 9) Scenes and Objects
 
-    - Not encrypted; No Sony NPDRM encryption
-    - Only found in HDK/QA versions
-    - LUA files inside were not encrypted
+**`BAR Archive :`**
 
-    **`SDAT Archive :`**
+- Not encrypted; No Sony NPDRM encryption
+- Only found in HDK/QA versions
+- LUA files inside were not encrypted
 
-    - **BAR Archive with Sony NPDRM encryption only; Used prior to October 2013**
+**`SDAT Archive :`**
 
-        - SDATA V2.4 and V2.2
+- **BAR Archive with Sony NPDRM encryption only; Used prior to October 2013**
 
-        - From version 1.35 onwards, LUA files were encrypted using an Encryption Proxy layer that applied Blowfish-based encryption and EdgeZlib compression. It was indicated by a flag in the TOC ( Table of Contents )
+    - SDATA V2.4 and V2.2
 
-    - **BAR Archive with Sony NPDRM and SHARC encryption; Used Mid-October 2013 onwards**
+    - From version 1.35 onwards, LUA files were encrypted using an Encryption Proxy layer that applied Blowfish-based encryption and EdgeZlib compression. It was indicated by a flag in the TOC ( Table of Contents )
 
-        - SDATA V4.0 and V2.4
+- **BAR Archive with Sony NPDRM and SHARC encryption; Used Mid-October 2013 onwards**
 
-        - SHARC encryption consists of three layers :
+    - SDATA V4.0 and V2.4
+
+    - SHARC encryption consists of three layers :
 
         **`Layer 1:`** AES256 encryption applied to both the Header ( Metadata section at the beginning of each archive ) and the TOC ( Table of Contents; lookup table containing metadata such as file offsets, sizes, compression types, along with the Keys and IVs used for the custom XTEA encryption ). The Header is decrypted first using AES256, followed by the TOC. The TOC is then decrypted with the same AES key and an incremented IV to reveal each file's Key and IV used in the custom XTEA encryption
 
@@ -346,14 +347,135 @@ USRDIR/CACHE/
 
         **`Layer 3:`** EdgeZlib compression applied to each file's data prior to encryption
 
-        - LUA files were encrypted in an additional Blowfish-based layer indicated by a flag in the TOC
+    - LUA files were encrypted in an additional Blowfish-based layer indicated by a flag in the TOC
 
-11) Configs_*lang*.SHARC
-    - BAR Archive with SHARC encryption described above
-    - Used Mid-September 2013 onwards
-    - Contains a ProfanityDictionary_*lang*.BIN encrypted with Libsecure XXTEA using a unique keyset
+### 11) Configs_*lang*.SHARC
+- BAR Archive with SHARC encryption described above
+- Used Mid-September 2013 onwards
+- Contains a ProfanityDictionary_*lang*.BIN encrypted with Libsecure XXTEA using a unique keyset
 
-12) Configs_*lang*.BAR
-    - BAR Archive; Not encrypted
-    - Used prior to September 2013
-    - Contains a ProfanityDictionary_*lang*.BIN encrypted with Libsecure XXTEA using a unique keyset
+### 12) Configs_*lang*.BAR
+- BAR Archive; Not encrypted
+- Used prior to September 2013
+- Contains a ProfanityDictionary_*lang*.BIN encrypted with Libsecure XXTEA using a unique keyset
+   
+### 13) Core Files
+
+<details>
+<summary><b>RETAIL - OPEN BETA</b></summary>
+-
+	
+**`BAR ARCHIVES WITH SHARC ENCRYPTION`**
+| Version | Title ID | Archives |
+|----------|-----------|----------|
+| 1.87 | NPIA00005 | COREDATA.SHARC, SHADERS.SHARC |
+| 1.86 | NPIA00005 | COREDATA.SHARC, SHADERS.SHARC, SCENE_APARTMENT.SHARC, CORE_OBJECTS.SHARC |
+| 1.85 | NPIA00005 | COREDATA.SHARC, SHADERS.SHARC, SCENE_APARTMENT.SHARC |
+| 1.82 | NPIA00005 | COREDATA.SHARC, SHADERS.SHARC, SCENE_APARTMENT.SHARC |
+
+
+**`BAR ARCHIVES WITH NO ENCRYPTION`**
+| Version | Title ID | Archives |
+|----------|-----------|----------|
+| 1.81 | NPIA00005 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR |
+| 1.80 | NPIA00005 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR |
+| 1.75 | NPIA00005 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR |
+| 1.70 | NPIA00005 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR |
+| 1.66 | NPIA00005 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR |
+| 1.65 | NPIA00005 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR |
+| 1.62 | NPIA00005 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, POOL_BOWLING.BAR |
+| 1.61 | NPIA00005 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, POOL_BOWLING.BAR |
+| 1.55 | NPIA00005 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, POOL_BOWLING.BAR |
+| 1.52 | NPIA00005 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, POOL_BOWLING.BAR, DYNFILES.BAR, SPURIOUS.BAR |
+| 1.51 | NPIA00005 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, POOL_BOWLING.BAR, DYNFILES.BAR, SPURIOUS.BAR |
+| 1.50 | NPIA00005 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, POOL_BOWLING.BAR, DYNFILES.BAR, SPURIOUS.BAR |
+| 1.41 | NPIA00005 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, POOL_BOWLING.BAR, DYNFILES.BAR, SPURIOUS.BAR |
+| 1.40 | NPIA00005 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, POOL_BOWLING.BAR, DYNFILES.BAR, SPURIOUS.BAR |
+| 1.36 | NPIA00005 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, POOL_BOWLING.BAR, DYNFILES.BAR, SPURIOUS.BAR |
+| 1.35 | NPIA00005 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, POOL_BOWLING.BAR, DYNFILES.BAR, SPURIOUS.BAR |
+| 1.32 | NPIA00005 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, POOL_BOWLING.BAR, DYNFILES.BAR, SPURIOUS.BAR |
+| 1.30 | NPIA00005 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, POOL_BOWLING.BAR, DYNFILES.BAR, SPURIOUS.BAR |
+| 1.22 | NPIA00005 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, POOL_BOWLING.BAR, DYNFILES.BAR, SPURIOUS.BAR, ARCADEPUZZLE.BAR, CHESS_DRAUGHTS.BAR, SCENE_CINEMA_AUDITORIUM.BAR, JAVA.BAR |
+| 1.11 | NPIA00005 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, POOL_BOWLING.BAR, DYNFILES.BAR, SPURIOUS.BAR, ARCADEPUZZLE.BAR, CHESS_DRAUGHTS.BAR, SCENE_CINEMA_AUDITORIUM.BAR, JAVA.BAR |
+| 1.10 | NPIA00005 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, POOL_BOWLING.BAR, DYNFILES.BAR, SPURIOUS.BAR, ARCADEPUZZLE.BAR, CHESS_DRAUGHTS.BAR, SCENE_CINEMA_AUDITORIUM.BAR, JAVA.BAR, OBJECTS_DEFAULT_AVATAR.BAR |
+| 1.05 | NPIA00005 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, POOL_BOWLING.BAR, DYNFILES.BAR, SPURIOUS.BAR, ARCADEPUZZLE.BAR, CHESS_DRAUGHTS.BAR, SCENE_CINEMA_AUDITORIUM.BAR, JAVA.BAR, OBJECTS_DEFAULT_AVATAR.BAR |
+
+</details>
+
+<details>
+<summary><b>RETAIL - CLOSED BETA</b></summary>
+-
+	
+**`BAR ARCHIVES WITH NO ENCRYPTION`**
+| Version | Title ID | Archives |
+|----------|-----------|----------|
+| 1.02 | NPIA00005 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, POOL_BOWLING.BAR, DYNFILES.BAR, SPURIOUS.BAR, ARCADEPUZZLE.BAR, CHESS_DRAUGHTS.BAR, SCENE_CINEMA_AUDITORIUM.BAR, JAVA.BAR, OBJECTS_DEFAULT_AVATAR.BAR |
+| 1.00 | NPIA00005 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, POOL_BOWLING.BAR, DYNFILES.BAR, SPURIOUS.BAR, ARCADEPUZZLE.BAR, CHESS_DRAUGHTS.BAR, SCENE_CINEMA_AUDITORIUM.BAR, JAVA.BAR, OBJECTS_DEFAULT_AVATAR.BAR |
+| 0.98 | NPIA00005 | NPBOOT.BAR, DYNFILES.BAR, SHADERS.BAR, JAVA.BAR, SCENE_APARTMENT.BAR, SCENE_CINEMA_AUDITORIUM.BAR, OBJECTS_DEFAULT_AVATAR.BAR, ARCADEBOUNCER.BAR, ARCADESTOCKCAR.BAR, ARCADEEVAC.BAR, ARCADEPUZZLE.BAR |
+| 0.94 | NPEA00013 | NPBOOT.BAR, DYNFILES.BAR, SHADERS.BAR, JAVA.BAR, SCENE_APARTMENT.BAR, SCENE_CINEMA_AUDITORIUM.BAR, OBJECTS_DEFAULT_AVATAR.BAR, ARCADEBOUNCER.BAR, ARCADESTOCKCAR.BAR, ARCADEEVAC.BAR, ARCADEPUZZLE.BAR |
+| 0.83 | NPIA00005 | NPBOOT.BAR, DYNFILES.BAR, SHADERS.BAR, JAVA.BAR, SCENE_APARTMENT.BAR, SCENE_CINEMA_AUDITORIUM.BAR, OBJECTS.BAR, ARCADEBOUNCER.BAR, ARCADESTOCKCAR.BAR, ARCADEEVAC.BAR, ARCADEPUZZLE.BAR |
+
+</details>
+
+<details>
+<summary><b>RETAIL - LIMITED TIME BETA</b></summary>
+-
+	
+**`BAR ARCHIVES WITH SHARC ENCRYPTION`**
+| Version | Title ID | Archives |
+|----------|-----------|----------|
+| 1.82 | NPEA00013 | COREDATA.SHARC, SHADERS.SHARC, SCENE_APARTMENT.SHARC |
+
+
+**`BAR ARCHIVES WITH NO ENCRYPTION`**
+| Version | Title ID | Archives |
+|----------|-----------|----------|
+| 1.75 | NPEA00013 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR |
+
+</details>
+
+<details>
+<summary><b>GDC DEMO</b></summary>
+-
+	
+**`BAR ARCHIVES WITH NO ENCRYPTION`**
+| Version | Title ID | Archives |
+|----------|-----------|----------|
+| 0.41 | NPEA00013 | NPBOOT.BAR, DYNFILES.BAR, SHADERS.BAR, JAVA.BAR, CHARACTERS.BAR, FURNITURE.BAR, SCENE_APARTMENT.BAR, SCENE_CENTRAL_LOBBY.BAR, SCENE_CINEMA.BAR, SCENE_CINEMA_AUDITORIUM.BAR, SCENE_GAMES_ROOM.BAR, ARCADEBLACKHOLE.BAR, ARCADECARRIAGERETURN.BAR, ARCADECONTINUUM.BAR, ARCADEEVAC.BAR, ARCADERUBBERBOB.BAR, ARCADESTOCKCAR.BAR |
+
+</details>
+
+<details>
+<summary><b>DEVELOPER - HDK</b></summary>
+-
+	
+**`BAR ARCHIVES WITH NO ENCRYPTION`**
+| Version | Title ID | Archives |
+|----------|-----------|----------|
+| 1.86 | NPIA00010 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, LOCAL_CORE_OBJECTS.BAR, CONFIG_HDK.BAR, DEV_ARCHIVE.BAR |
+| 1.82 | NPIA00010 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, LOCAL_CORE_OBJECTS.BAR, CONFIG_HDK.BAR, DEV_ARCHIVE.BAR |
+| 1.80 | NPIA00010 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, LOCAL_CORE_OBJECTS.BAR, CONFIG_HDK.BAR, DEV_ARCHIVE.BAR |
+| 1.75 | NPIA00010 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, LOCAL_CORE_OBJECTS.BAR, CONFIG_HDK.BAR, DEV_ARCHIVE.BAR |
+| 1.70 | NPIA00010 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, LOCAL_CORE_OBJECTS.BAR, CONFIG_HDK.BAR, DEV_ARCHIVE.BAR |
+| 1.66 | NPIA00010 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, LOCAL_CORE_OBJECTS.BAR, CONFIG_HDK.BAR, DEV_ARCHIVE.BAR, POOL_BOWLING.BAR |
+| 1.65 | NPIA00010 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, LOCAL_CORE_OBJECTS.BAR, CONFIG_HDK.BAR, DEV_ARCHIVE.BAR, POOL_BOWLING.BAR |
+| 1.62 | NPIA00010 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, LOCAL_CORE_OBJECTS.BAR, DEV_ARCHIVE.BAR, POOL_BOWLING.BAR |
+| 1.60 | NPIA00010 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, LOCAL_CORE_OBJECTS.BAR, DEV_ARCHIVE.BAR, POOL_BOWLING.BAR |
+| 1.41 | NPIA00010 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, DEV_ARCHIVE.BAR, POOL_BOWLING.BAR, SPURIOUS.BAR, DYNFILES.BAR, OBJECTS_DEFAULT_INVENTORY.BAR |
+| 1.35 | NPIA00010 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, DEV_ARCHIVE.BAR, POOL_BOWLING.BAR, SPURIOUS.BAR, DYNFILES.BAR, OBJECTS_DEFAULT_INVENTORY.BAR |
+| 1.32 | NPEA00013 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, DEV_ARCHIVE.BAR, POOL_BOWLING.BAR, SPURIOUS.BAR, DYNFILES.BAR, OBJECTS_DEFAULT_INVENTORY.BAR |
+| 1.00 | NPEA00013 | COREDATA.BAR, SHADERS.BAR, SCENE_APARTMENT.BAR, OBJECTS_DEV.BAR, POOL_BOWLING.BAR, SPURIOUS.BAR, DYNFILES.BAR, JAVA.BAR, OBJECTS_DEFAULT_INVENTORY.BAR, CHESS_DRAUGHTS.BAR |
+
+</details>
+
+<details>
+<summary><b>DEVELOPER - QA</b></summary>
+-
+	
+**`BAR ARCHIVES WITH SHARC ENCRYPTION`**
+| Version | Title ID | Archives |
+|----------|-----------|----------|
+| 1.86 | NPIA00005 | COREDATA.SHARC, SHADERS.SHARC, SCENE_APARTMENT.SHARC, CORE_OBJECTS.SHARC |
+| 1.85 | NPIA00005 | COREDATA.SHARC, SHADERS.SHARC, SCENE_APARTMENT.SHARC |
+
+</details>
