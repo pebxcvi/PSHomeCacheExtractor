@@ -293,11 +293,12 @@ USRDIR/CACHE/
 ### 2) SceneList.XML
 - Encrypted with Libsecure Blowfish using a unique keyset
 
-### 3) Scene Descriptor Files ( SceneSDATName_TXXX.SDC )
+### 3) Scene Descriptor Files 
+- SceneSDATName_TXXX.SDC
 - XML; Encrypted with Libsecure Blowfish using a unique keyset
 
-### 4) Object Descriptor Files ( Object_TXXX.ODC )
-
+### 4) Object Descriptor Files
+- Object_TXXX.ODC
 - XML; Encrypted with Libsecure Blowfish using a unique keyset
 
 ### 5) Navigator_*region*.XML
