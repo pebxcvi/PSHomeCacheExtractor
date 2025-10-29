@@ -306,7 +306,7 @@ USRDIR/CACHE/
 - Not encrypted from Mid-April 2011 onwards
 
 ### 6) ProfanityDictionary_*lang*.BIN
-- Binary BIN from what we beleive to be from a program apart of the PS3 SDK
+- Binary BIN from what we believe to be from a program apart of the PS3 SDK
 - Earlier Profanity Dictionaries were XXTEA encrypted with a static key and served directly from the scee-home.playstation.net and secure.cprod.homeps3.online.scee.com domains
 - Newer Profanity Dictionaries were AES128 encrypted .EBIN's and served via the profanityfilter API updater service under the update-prod.pfs.online.scee.com domain. The API was configured within the TSS file
 
@@ -419,22 +419,6 @@ USRDIR/CACHE/
 </details>
 
 <details>
-<summary><b>RETAIL - LIMITED TIME BETA</b></summary>
--
-	
-**`BAR ARCHIVES WITH SHARC ENCRYPTION :`**
-| Version | Title ID | Archives | Cache References | PKG References |
-|----------|-----------|----------|----------|----------|
-| 1.82 | NPEA00013 | COREDATA.SHARC<br>SHADERS.SHARC<br>SCENE_APARTMENT.SHARC | Soul2 |
-
-**`BAR ARCHIVES WITH NO ENCRYPTION :`**
-| Version | Title ID | Archives | Cache References | PKG References |
-|----------|-----------|----------|----------|----------|
-| 1.75 | NPEA00013 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR | JrMans2<br>Megalia |
-
-</details>
-
-<details>
 <summary><b>GDC DEMO</b></summary>
 -
 	
@@ -444,7 +428,24 @@ USRDIR/CACHE/
 | 0.41 | NPEA00013 | NPBOOT.BAR<br>DYNFILES.BAR<br>SHADERS.BAR<br>JAVA.BAR<br>CHARACTERS.BAR<br>FURNITURE.BAR<br>SCENE_APARTMENT.BAR<br>SCENE_CENTRAL_LOBBY.BAR<br>SCENE_CINEMA.BAR<br>SCENE_CINEMA_AUDITORIUM.BAR<br>SCENE_GAMES_ROOM.BAR<br>ARCADEBLACKHOLE.BAR<br>ARCADECARRIAGERETURN.BAR<br>ARCADECONTINUUM.BAR<br>ARCADEEVAC.BAR<br>ARCADERUBBERBOB.BAR<br>ARCADESTOCKCAR.BAR | GoldenFields | NPEA00013 Beta GDC Demo 2007 0.41.pkg |
 
 </details>
+<details>
+<summary><b>CONTENT BETA</b></summary>
+-
+	
+**`💡 Note: Content Betas are more Retail in nature but differ slightly. While TTY functionality is disabled, they still retain developer-like console commands seen in QA and HDK builds.`**
 
+**`BAR ARCHIVES WITH SHARC ENCRYPTION :`**
+| Version | Title ID | Archives | Cache References | PKG References |
+|----------|-----------|----------|----------|----------|
+| 1.82 | NPEA00013 | COREDATA.SHARC<br>SHADERS.SHARC<br>SCENE_APARTMENT.SHARC | Soul2 |
+
+**`BAR ARCHIVES WITH NO ENCRYPTION :`**
+| Version | Title ID | Archives | Cache References | PKG References |
+|----------|-----------|----------|----------|----------|
+| 1.75 | NPEA00013 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR | JrMans2<br>Megalia |
+| 1.35 | NPEA00013 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR<br>DYNFILES.BAR<br>SPURIOUS.BAR ||Home013518beta.pkg|
+
+</details>
 <details>
 <summary><b>DEVELOPER - HDK</b></summary>
 -
@@ -467,7 +468,6 @@ USRDIR/CACHE/
 | 1.32 | NPEA00013 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>DEV_ARCHIVE.BAR<br>POOL_BOWLING.BAR<br>SPURIOUS.BAR<br>DYNFILES.BAR<br>OBJECTS_DEFAULT_INVENTORY.BAR|SingStar<br>Developer|
 | 1.00 | NPEA00013 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>OBJECTS_DEV.BAR<br>POOL_BOWLING.BAR<br>SPURIOUS.BAR<br>DYNFILES.BAR<br>JAVA.BAR<br>OBJECTS_DEFAULT_INVENTORY.BAR<br>CHESS_DRAUGHTS.BAR|Dusty_2|
 
-
 </details>
 <details>
 <summary><b>DEVELOPER - QA</b></summary>
@@ -478,5 +478,6 @@ USRDIR/CACHE/
 |----------|-----------|----------|----------|----------|
 | 1.86 | NPIA00005 | COREDATA.SHARC<br>SHADERS.SHARC<br>SCENE_APARTMENT.SHARC<br>CORE_OBJECTS.SHARC |QuantumDoja1|
 | 1.85 | NPIA00005 | COREDATA.SHARC<br>SHADERS.SHARC<br>SCENE_APARTMENT.SHARC |Soul3|
+| 1.35 | NPEA00013 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR<br>DYNFILES.BAR<br>SPURIOUS.BAR ||Home013517qa.pkg|
 
 </details>
