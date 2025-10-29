@@ -451,7 +451,6 @@ USRDIR/CACHE/
 -
 	
 **`BAR ARCHIVES WITH NO ENCRYPTION :`**
-
 | Version | Title ID | Archives | Cache References | PKG References | 
 |----------|-----------|----------|----------|----------|
 | 1.86 | NPIA00010 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>LOCAL_CORE_OBJECTS.BAR<br>CONFIG_HDK.BAR<br>DEV_ARCHIVE.BAR|QuantumDoja2<br>Soul4DECH2500|HomeDeveloperBuild186.pkg|
@@ -478,6 +477,10 @@ USRDIR/CACHE/
 |----------|-----------|----------|----------|----------|
 | 1.86 | NPIA00005 | COREDATA.SHARC<br>SHADERS.SHARC<br>SCENE_APARTMENT.SHARC<br>CORE_OBJECTS.SHARC |QuantumDoja1|
 | 1.85 | NPIA00005 | COREDATA.SHARC<br>SHADERS.SHARC<br>SCENE_APARTMENT.SHARC |Soul3|
+
+**`BAR ARCHIVES WITH NO ENCRYPTION :`**
+| Version | Title ID | Archives | Cache References | PKG References | 
+|----------|-----------|----------|----------|----------|
 | 1.35 | NPEA00013 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR<br>DYNFILES.BAR<br>SPURIOUS.BAR ||Home013517qa.pkg|
 
 </details>
