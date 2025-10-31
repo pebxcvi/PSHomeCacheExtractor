@@ -290,37 +290,40 @@ USRDIR/CACHE/
 ### 1) INF files
 - Encrypted with Libsecure Blowfish using a unique keyset
 
-### 2) SceneList.XML
+### 2) TICKET.LST files
 - Encrypted with Libsecure Blowfish using a unique keyset
 
-### 3) Scene Descriptor Files 
+### 3) SceneList.XML
+- Encrypted with Libsecure Blowfish using a unique keyset
+
+### 4) Scene Descriptor Files 
 - SceneSDATName_TXXX.SDC
 - XML; Encrypted with Libsecure Blowfish using a unique keyset
 
-### 4) Object Descriptor Files
+### 5) Object Descriptor Files
 - Object_TXXX.ODC
 - XML; Encrypted with Libsecure Blowfish using a unique keyset
 
-### 5) Navigator_*region*.XML
+### 6) Navigator_*region*.XML
 - Encrypted prior to April 2011 with Libsecure Blowfish using a unique keyset
 - Not encrypted from Mid-April 2011 onwards
 
-### 6) ProfanityDictionary_*lang*.BIN
+### 7) ProfanityDictionary_*lang*.BIN
 - Binary BIN from what we believe to be from a program apart of the PS3 SDK
 - Earlier Profanity Dictionaries were XXTEA encrypted with a static key and served directly from the scee-home.playstation.net and secure.cprod.homeps3.online.scee.com domains
 - Newer Profanity Dictionaries were AES128 encrypted .EBIN's and served via the profanityfilter API updater service under the update-prod.pfs.online.scee.com domain. The API was configured within the TSS file
 
-### 7) ObjectCatalogue_5_*region*.HCDB
+### 8) ObjectCatalogue_5_*region*.HCDB
 - SQLite database ( .SQL )
 - Encrypted with Libsecure Blowfish using a unique keyset and compressed with EdgeLzma ( SEGS )
 - Used from Mid-November 2010 onwards
 
-### 8) ObjectCatalogue.BAR
+### 9) ObjectCatalogue.BAR
 - BAR Archive; Encrypted with Libsecure Blowfish using a unique keyset
 - The BAR Archive contains a single XML
 - Used prior to November 2010
 
-### 9) Scenes and Objects
+### 10) Scenes and Objects
 
 **`BAR Archive :`**
 
@@ -350,17 +353,17 @@ USRDIR/CACHE/
 
     - LUA files were encrypted in an additional Blowfish-based layer indicated by a flag in the TOC
 
-### 10) Configs_*lang*.SHARC
+### 11) Configs_*lang*.SHARC
 - BAR Archive with SHARC encryption described above
 - Used Mid-September 2013 onwards
 - Contains a ProfanityDictionary_*lang*.BIN encrypted with Libsecure XXTEA using a unique keyset
 
-### 11) Configs_*lang*.BAR
+### 12) Configs_*lang*.BAR
 - BAR Archive; Not encrypted
 - Used prior to September 2013
 - Contains a ProfanityDictionary_*lang*.BIN encrypted with Libsecure XXTEA using a unique keyset
    
-### 12) Core Files
+### 13) Core Files
 
 <details>
 <summary><b>RETAIL - OPEN BETA</b></summary>
