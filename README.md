@@ -97,7 +97,7 @@ The batch script calls the following scripts, all of which are required for prop
 	
 	- Github repositories utilized :
 		
-	  1) MultiServer3 -> https://github.com/GitHubProUser67/MultiServer3
+	  1) MultiServer -> https://github.com/GitHubProUser67/MultiServer3
 
          - ToolsImplentation.cs, HomeToolsInterface.cs, StringUtils.cs, CharUtils.cs, ByteUtils.cs, & LIBSECRE.cs
 	  3) BouncyCastle -> https://github.com/bcgit/bc-csharp
