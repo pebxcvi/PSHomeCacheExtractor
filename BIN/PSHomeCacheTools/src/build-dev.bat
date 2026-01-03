@@ -1,2 +1,2 @@
-python setup.py build
+py setup.py build
 cmd /k

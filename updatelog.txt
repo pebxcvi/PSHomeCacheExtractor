@@ -2,6 +2,10 @@ PSHome Cache Extractor
 
 Changes/Updates Log :
 
+V3.5.8
+
+- In merge_inflogs.py, I added two strings to the batch_cleanup_dir_field list. %28 and %29. These will turn into '(' and ')'
+
 V3.5.7
 
 - In log_thumbnails.py, I added new entries in the SCENE_PATTERNS array.
