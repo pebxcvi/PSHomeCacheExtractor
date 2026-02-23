@@ -138,8 +138,8 @@ The batch script calls the following scripts, all of which are required for prop
 ### Folder Definitions
 
 **```CLANS```**
-- Clubhouse Furniture Layout XMLs from older versions.
-- Clubhouse Save Data XMLs from older versions.
+- Clubhouse Furniture Layout XMLs from older versions
+- Clubhouse Save Data XMLs from older versions
 
 **```GLOBALS```** 
 - Core files 
