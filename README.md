@@ -26,7 +26,7 @@ With that in mind, this PSHome Cache Extractor is only supported on Windows x64/
 > 1) The ffprobe.exe may get falsely picked up by Discord and Google Drive antivirus. 
 > 2) Due to the EXEs not being signed with a CA ( Certificate Authority ) certificate ( which costs a fortune ), some antivirus may falsely detect it as a virus unfortunately.
 
-The PlayStation®Home Cache Logger was put together by Rew from the Home Laboratory Playstation Home Revival Group.
+The PlayStation®Home Cache Logger was put together by Rew from the Home Laboratory PlayStation®Home preservation group.
 
 Discord -> https://dsc.gg/homelaboratory
 
