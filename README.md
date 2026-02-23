@@ -161,7 +161,7 @@ The batch script calls the following scripts, all of which are required for prop
     - Message Of The Day content
     - Music
     - Commerce Point ( Store ) Thumbnails
-    - Object thumbnails
+    - Object Thumbnails
     - Various Screen/Poster content ( Images )
 
 **```OBJECTDEFS```**
