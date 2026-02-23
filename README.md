@@ -138,7 +138,7 @@ The batch script calls the following scripts, all of which are required for prop
 ### Folder Definitions
 
 **```CLANS```**
-- Clubhouse Furniture Layout XMLs & Clubhouse Save Data XMLs from older PlayStation®Home versions.
+- Clubhouse Furniture Layout XMLs & Clubhouse Save Data XMLs from older versions.
 
 **```GLOBALS```** 
 - Core files 
