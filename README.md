@@ -153,14 +153,14 @@ The batch script calls the following scripts, all of which are required for prop
     - RegionMap XMLs
 - Screen Link XMLs
 - Message Of The Day XMLs or TXTs
-- Commerce Point ( Store ) XMLs & thumbnails
+- Commerce Point ( Store ) XMLs & Thumbnails
 
 **```HTTP```**
 - Used prior to OBJECTDYNAMIC in super old versions
 - Dynamic Media from Objects
     - Message Of The Day content
     - Music
-    - Commerce Point ( Store ) thumbnails
+    - Commerce Point ( Store ) Thumbnails
     - Object thumbnails
     - Various Screen/Poster content ( Images )
 
@@ -172,7 +172,7 @@ The batch script calls the following scripts, all of which are required for prop
 - Dynamic Media from Objects
     - Message Of The Day content
     - Music
-    - Commerce Point ( Store ) thumbnails
+    - Commerce Point ( Store ) Thumbnails
     - Object thumbnails
     - Various Screen/Poster content ( Images )
 
@@ -180,11 +180,11 @@ The batch script calls the following scripts, all of which are required for prop
 								
 - Avatar headshots from the Save Data Service
 - PSN Profile Avatar Images
-- Misc Profile setting XMLs from older PlayStation®Home versions
+- Misc Profile setting XMLs from older versions
 
 **```SCENES```**							
 - Scenes ( SDAT OR BAR ) & their descriptor files ( SDC )
-- Scene thumbnails
+- Scene Thumbnails
 - Scene Version XMLs
 
 **```VIDEO```**
@@ -192,7 +192,7 @@ The batch script calls the following scripts, all of which are required for prop
 
 **```WORLDMAP```**							
 - Navigator content 
-- Scene thumbnails 
+- Scene Thumbnails 
 
 ### Folder Structures
 
