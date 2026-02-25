@@ -266,7 +266,10 @@ ECHO.
 ECHO.
 ECHO.^|-------------------^|
 ECHO.^| SINGLE CACHE MODE ^|
-ECHO.^|-------------------^|
+ECHO.^|-------------------^|-----------------------------^|
+ECHO.^| Home Laboratory                                 ^|
+ECHO.^| https://github.com/pebxcvi/PSHomeCacheExtractor ^|
+ECHO.^|-------------------------------------------------^|
 ECHO.
 ECHO.
 ECHO 0.  CREATE OBJECT/SCENE THUMBNAIL LOG
@@ -1429,15 +1432,21 @@ ECHO.
 ECHO.
 ECHO.^|----------------------^|
 ECHO.^| UNLIMITED CACHE MODE ^|
-ECHO.^|----------------------^|
+ECHO.^|----------------------^|--------------------------^|
+ECHO.^| Home Laboratory                                 ^|
+ECHO.^| https://github.com/pebxcvi/PSHomeCacheExtractor ^|
+ECHO.^|-------------------------------------------------^|
 ECHO.
 ECHO.
 ECHO 1. ARCHIVE CACHES SEPARATE
-ECHO 2. ARCHIVE CACHES COMBINED
-ECHO 3. SUSPEND CMD
 ECHO.
-ECHO ENTER 1O TO SKIP INFLOG CHECK FOR ARCHIVE CACHES SEPARATE
-ECHO.ENTER 2O TO SKIP INFLOG CHECK FOR ARCHIVE CACHES COMBINED
+ECHO     TO SKIP INFLOG CHECK -^> ENTER 1O
+ECHO.
+ECHO 2. ARCHIVE CACHES COMBINED
+ECHO.
+ECHO     TO SKIP INFLOG CHECK -^> ENTER 2O
+ECHO.
+ECHO 3. SUSPEND CMD
 ECHO.
 SET /P CHOICE=ENTER A NUMBER TO PERFORM AN ACTION: 
 ECHO.
