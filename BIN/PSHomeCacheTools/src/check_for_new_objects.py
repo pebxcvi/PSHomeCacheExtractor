@@ -75,4 +75,9 @@ def main():
     process_log_file(args.log_objects_file, object_query_data, args.output_log_file)
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        print("FATAL ERROR:", e)
+        import traceback
+        traceback.print_exc()

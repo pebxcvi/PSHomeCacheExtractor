@@ -2,6 +2,14 @@ PSHome Cache Extractor
 
 Changes/Updates Log :
 
+V3.5.9
+- Added traceback errors in the log_sdats.exe and check_for_new_objects.exe.
+- Fixed crash when creating sdat logs where folder names contain parentheses.
+- Added object sdat checker to Unlimited Cache Combined Mode and Unlimited Cache Separate Mode.
+- For object sdat checker, added a static path for the OBJECT_QUERY.txt. Path is directly in BIN\ folder.
+- A default OBJECT_QUERY.txt was added to BIN\ for others. I was using a hardcoded path because the archive is local to me.
+	- To get an updated OBJECT_QUERY.txt, download here @ https://huggingface.co/datasets/pebxcvi/PSHomeCacheDepot/resolve/main/OBJECTS/OBJECT_QUERY.txt?download=true
+
 V3.5.8
 
 - In merge_inflogs.py, I added two strings to the batch_cleanup_dir_field list. %28 and %29. These will turn into '(' and ')'

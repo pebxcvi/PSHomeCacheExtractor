@@ -597,5 +597,9 @@ def main():
             dbg("No .sdat/.bar objects or scenes found; no log file created.")
 
 if __name__ == "__main__":
-    main()
-
+    try:
+        main()
+    except Exception as e:
+        print("FATAL ERROR:", e)
+        import traceback
+        traceback.print_exc()
