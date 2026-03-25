@@ -2,6 +2,11 @@ PSHome Cache Extractor
 
 Changes/Updates Log :
 
+V3.6.0
+- In DEFIN2.0, I fixed a bug where it would error for uri paths that contains a genuine "cache/".
+- Cleaned up the start of batch script that distinguishes between Single Cache Mode or Unlimited Cache Mode.
+- In log_thumbnails.py, I added new entries in the SCENE_PATTERNS array.
+
 V3.5.9
 - Added traceback errors in the log_sdats.exe and check_for_new_objects.exe.
 - Fixed crash when creating sdat logs where folder names contain parentheses.

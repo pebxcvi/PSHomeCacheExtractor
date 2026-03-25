@@ -75,12 +75,13 @@ public static class LogExtractor
 
             if (!string.IsNullOrEmpty(uriPath))
             {
-                if (uriPath.IndexOf("cache/", StringComparison.OrdinalIgnoreCase) >= 0)
-                {
-                    if (DebugOutput) Console.WriteLine($"[DEBUG] uriPath contains 'cache/'. Logging error.");
-                    errorLines?.Add($"[ERROR] {fileName} partially decrypted");
-                    return null;
-                }
+               if (uriPath.IndexOf("cache/", StringComparison.OrdinalIgnoreCase) >= 0 &&
+                   uriPath.IndexOf("/cache/", StringComparison.OrdinalIgnoreCase) < 0)
+               {
+                   if (DebugOutput) Console.WriteLine($"[DEBUG] uriPath contains raw 'cache/' (not '/cache/'). Logging error.");
+                   errorLines?.Add($"[ERROR] {fileName} partially decrypted");
+                   return null;
+               }
                 
                if (uriPath.Length > 32 && uriPath.Distinct().Count() == 1)
                {

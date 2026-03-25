@@ -100,39 +100,39 @@ You can find individual download links here. ( [Google Sheets](https://docs.goog
 The batch script calls the following scripts, all of which are required for proper operation :
 
 1) BIN\DEFINF2.0\DEINF2.0.exe - C# INF decrypter and logger
-	
-	- Github repositories utilized :
-		
-	  1) Nautilus -> https://github.com/GitHubProUser67/NautilusXP2024
 
-         - ToolsImplentation.cs, OtherExtensions.cs, & LIBSECRE.cs
-	  3) BouncyCastle -> https://github.com/bcgit/bc-csharp
-	  4) ShellProgressBar -> https://github.com/Mpdreamz/shellprogressbar
-   
-   - The DEINF2.0.exe uses Net 6 -> https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-6.0.428-windows-x64-installer
-    
+- Github repositories utilized :
+
+1) Nautilus -> https://github.com/GitHubProUser67/NautilusXP2024
+
+- ToolsImplentation.cs, OtherExtensions.cs, & LIBSECRE.cs
+3) BouncyCastle -> https://github.com/bcgit/bc-csharp
+4) ShellProgressBar -> https://github.com/Mpdreamz/shellprogressbar
+
+- The DEINF2.0.exe uses Net 6 -> https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-6.0.428-windows-x64-installer
+
 2) Python based EXEs built from the CX-Freeze Python library.
-    - CX-Freeze Info -> https://cx-freeze.readthedocs.io/en/stable/
-    - Python 3.11 itself gets bundled into the BIN\PSHomeCacheTools\lib\ folder.
-    - The Pillow Python Library is also utilized here -> https://pypi.org/project/pillow/
-	
-    - BIN\PSHomeCacheTools\   
-    ├── file_analysis.exe   
-    ├── check_for_new_objects.exe   
-    ├── cache_copy_single.exe   
-    ├── cache_copy_combined.exe   
-    ├── log_sdats.exe   
-    ├── log_thumbnails.exe  
-    ├── merge_inflogs.exe   
-    └── custom_query.exe
+- CX-Freeze Info -> https://cx-freeze.readthedocs.io/en/stable/
+- Python 3.11 itself gets bundled into the BIN\PSHomeCacheTools\lib\ folder.
+- The Pillow Python Library is also utilized here -> https://pypi.org/project/pillow/
+
+- BIN\PSHomeCacheTools\   
+├── file_analysis.exe   
+├── check_for_new_objects.exe   
+├── cache_copy_single.exe   
+├── cache_copy_combined.exe   
+├── log_sdats.exe   
+├── log_thumbnails.exe  
+├── merge_inflogs.exe   
+└── custom_query.exe
 
 3) BIN\ffprobe.exe
-   - Download -> https://github.com/BtbN/FFmpeg-Builds/releases
-   - Info -> https://www.ffmpeg.org/ffprobe.html
+- Download -> https://github.com/BtbN/FFmpeg-Builds/releases
+- Info -> https://www.ffmpeg.org/ffprobe.html
 
 4) BIN\JREPL\JREPL.BAT - Batch/Jscript Hybrid
-   - Created by dbenham -> https://stackoverflow.com/users/1012053/dbenham
-		
+- Created by dbenham -> https://stackoverflow.com/users/1012053/dbenham
+
 ## Cache Breakdown
 
 ### Folder Definitions
@@ -143,14 +143,14 @@ The batch script calls the following scripts, all of which are required for prop
 
 **```GLOBALS```** 
 - Core files 
-    - SceneList XMLs
-    - ObjectCatalogue ( BAR OR HCDB )
-    - DefaultInventory ( BAR )
-    - Configs ( BAR OR SHARC )
-    - Profanity Dictionary ( BIN )
-    - Navigator/NavigatorRoot XMLs
-    - ServiceIds XMLs 
-    - RegionMap XMLs
+- SceneList XMLs
+- ObjectCatalogue ( BAR OR HCDB )
+- DefaultInventory ( BAR )
+- Configs ( BAR OR SHARC )
+- Profanity Dictionary ( BIN )
+- Navigator/NavigatorRoot XMLs
+- ServiceIds XMLs 
+- RegionMap XMLs
 - Screen Link XMLs
 - Message Of The Day XMLs or TXTs
 - Commerce Point ( Store ) XMLs & Thumbnails
@@ -158,11 +158,11 @@ The batch script calls the following scripts, all of which are required for prop
 **```HTTP```**
 - Used prior to OBJECTDYNAMIC in super old versions
 - Dynamic Media from Objects
-    - Message Of The Day content
-    - Music
-    - Commerce Point ( Store ) Thumbnails
-    - Object Thumbnails
-    - Various Screen/Poster content ( Images )
+- Message Of The Day content
+- Music
+- Commerce Point ( Store ) Thumbnails
+- Object Thumbnails
+- Various Screen/Poster content ( Images )
 
 **```OBJECTDEFS```**
 
@@ -170,14 +170,14 @@ The batch script calls the following scripts, all of which are required for prop
 
 **```OBJECTDYNAMIC```**
 - Dynamic Media from Objects
-    - Message Of The Day content
-    - Music
-    - Commerce Point ( Store ) Thumbnails
-    - Object Thumbnails
-    - Various Screen/Poster content ( Images )
+- Message Of The Day content
+- Music
+- Commerce Point ( Store ) Thumbnails
+- Object Thumbnails
+- Various Screen/Poster content ( Images )
 
 **```PROFILE```**
-								
+
 - Avatar headshots from the Save Data Service
 - PSN Profile Avatar Images
 - Misc Profile setting XMLs from older versions
@@ -342,23 +342,23 @@ USRDIR/CACHE/
 
 - **BAR Archive with Sony NPDRM encryption only; Used prior to October 2013**
 
-    - SDATA V2.4 and V2.2
+- SDATA V2.4 and V2.2
 
-    - From version 1.35 onwards, LUA files were encrypted using an Encryption Proxy layer that applied Blowfish-based encryption and EdgeZlib compression. It was indicated by a flag in the TOC ( Table of Contents )
+- From version 1.35 onwards, LUA files were encrypted using an Encryption Proxy layer that applied Blowfish-based encryption and EdgeZlib compression. It was indicated by a flag in the TOC ( Table of Contents )
 
 - **BAR Archive with Sony NPDRM and SHARC encryption; Used Mid-October 2013 onwards**
 
-    - SDATA V4.0 and V2.4
+- SDATA V4.0 and V2.4
 
-    - SHARC encryption consists of three layers :
+- SHARC encryption consists of three layers :
 
-        **`Layer 1:`** AES256 encryption applied to both the Header ( Metadata section at the beginning of each archive ) and the TOC ( Table of Contents; lookup table containing metadata such as file offsets, sizes, compression types, along with the Keys and IVs used for the custom XTEA encryption ). The Header is decrypted first using AES256, followed by the TOC. The TOC is then decrypted with the same AES key and an incremented IV to reveal each file's Key and IV used in the custom XTEA encryption
+**`Layer 1:`** AES256 encryption applied to both the Header ( Metadata section at the beginning of each archive ) and the TOC ( Table of Contents; lookup table containing metadata such as file offsets, sizes, compression types, along with the Keys and IVs used for the custom XTEA encryption ). The Header is decrypted first using AES256, followed by the TOC. The TOC is then decrypted with the same AES key and an incremented IV to reveal each file's Key and IV used in the custom XTEA encryption
 
-        **`Layer 2:`** Custom XTEA encryption applied individually to each file using its own unique Key and IV ( Values retrieved from the decrypted TOC )
+**`Layer 2:`** Custom XTEA encryption applied individually to each file using its own unique Key and IV ( Values retrieved from the decrypted TOC )
 
-        **`Layer 3:`** EdgeZlib compression applied to each file's data prior to encryption
+**`Layer 3:`** EdgeZlib compression applied to each file's data prior to encryption
 
-    - LUA files were encrypted in an additional Blowfish-based layer indicated by a flag in the TOC
+- LUA files were encrypted in an additional Blowfish-based layer indicated by a flag in the TOC
 
 ### 11) Configs_*lang*.SHARC
 - BAR Archive with SHARC encryption described above
@@ -369,13 +369,13 @@ USRDIR/CACHE/
 - BAR Archive; Not encrypted
 - Used prior to September 2013
 - Contains a ProfanityDictionary_*lang*.BIN encrypted with Libsecure XXTEA using a unique keyset
-   
+
 ### 13) Core Files
 
 <details>
 <summary><b>RETAIL - OPEN BETA</b></summary>
 -
-	
+
 **`BAR ARCHIVES WITH SHARC ENCRYPTION :`**
 | Version | Title ID | Archives | Cache References | PKG References | 
 |----------|-----------|----------|----------|----------|
@@ -396,31 +396,33 @@ USRDIR/CACHE/
 | 1.65 | NPIA00005 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR |
 | 1.62 | NPIA00005 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR |
 | 1.61 | NPIA00005 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR |
+| 1.60 | NPIA00005 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR ||NPIA00005 01.60.pkg|
 | 1.55 | NPIA00005 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR |
 | 1.52 | NPIA00005 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR<br>DYNFILES.BAR<br>SPURIOUS.BAR |
-| 1.51 | NPIA00005 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR<br>DYNFILES.BAR<br>SPURIOUS.BAR |
+| 1.51 | NPIA00005 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR<br>DYNFILES.BAR<br>SPURIOUS.BAR ||NPIA00005 01.51.pkg|
 | 1.50 | NPIA00005 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR<br>DYNFILES.BAR<br>SPURIOUS.BAR |
 | 1.41 | NPIA00005 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR<br>DYNFILES.BAR<br>SPURIOUS.BAR ||NPIA00005 01.41.pkg|
-| 1.40 | NPIA00005 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR<br>DYNFILES.BAR<br>SPURIOUS.BAR |
+| 1.40 | NPIA00005 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR<br>DYNFILES.BAR<br>SPURIOUS.BAR ||NPIA00005 01.40.pkg|
 | 1.36 | NPIA00005 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR<br>DYNFILES.BAR<br>SPURIOUS.BAR |
 | 1.35 | NPIA00005 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR<br>DYNFILES.BAR<br>SPURIOUS.BAR ||NPIA00005 01.35.pkg|
 | 1.32 | NPIA00005 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR<br>DYNFILES.BAR<br>SPURIOUS.BAR |
-| 1.30 | NPIA00005 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR<br>DYNFILES.BAR<br>SPURIOUS.BAR |MrJunezJP2
-| 1.22 | NPIA00005 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR<br>DYNFILES.BAR<br>SPURIOUS.BAR<br>ARCADEPUZZLE.BAR<br>CHESS_DRAUGHTS.BAR<br>SCENE_CINEMA_AUDITORIUM.BAR<br>JAVA.BAR |StratosA<br>Rew13<br>Spbuilder
+| 1.30 | NPIA00005 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR<br>DYNFILES.BAR<br>SPURIOUS.BAR |MrJunezJP2<br>Zorix
+| 1.22 | NPIA00005 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR<br>DYNFILES.BAR<br>SPURIOUS.BAR<br>ARCADEPUZZLE.BAR<br>CHESS_DRAUGHTS.BAR<br>SCENE_CINEMA_AUDITORIUM.BAR<br>JAVA.BAR |StratosA<br>Rew13<br>liquidpenny
 | 1.11 | NPIA00005 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR<br>DYNFILES.BAR<br>SPURIOUS.BAR<br>ARCADEPUZZLE.BAR<br>CHESS_DRAUGHTS.BAR<br>SCENE_CINEMA_AUDITORIUM.BAR<br>JAVA.BAR |ModdedWarfare<br>Dark-Star_1337
 | 1.10 | NPIA00005 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR<br>DYNFILES.BAR<br>SPURIOUS.BAR<br>ARCADEPUZZLE.BAR<br>CHESS_DRAUGHTS.BAR<br>SCENE_CINEMA_AUDITORIUM.BAR<br>JAVA.BAR<br>OBJECTS_DEFAULT_AVATAR.BAR |Joe1452|NPIA00005 01.10.pkg|
-| 1.05 | NPIA00005 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR<br>DYNFILES.BAR<br>SPURIOUS.BAR<br>ARCADEPUZZLE.BAR<br>CHESS_DRAUGHTS.BAR<br>SCENE_CINEMA_AUDITORIUM.BAR<br>JAVA.BAR<br>OBJECTS_DEFAULT_AVATAR.BAR |NovaDaemon1.05<br>Cypher2
+| 1.05 | NPIA00005 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR<br>DYNFILES.BAR<br>SPURIOUS.BAR<br>ARCADEPUZZLE.BAR<br>CHESS_DRAUGHTS.BAR<br>SCENE_CINEMA_AUDITORIUM.BAR<br>JAVA.BAR<br>OBJECTS_DEFAULT_AVATAR.BAR |NovaDaemon4<br>Cypher3<br>waynosdaboss
 
 </details>
 
 <details>
 <summary><b>RETAIL - CLOSED BETA</b></summary>
 -
-	
+
 **`BAR ARCHIVES WITH NO ENCRYPTION :`**
 | Version | Title ID | Archives | Cache References | PKG References |
 |----------|-----------|----------|----------|----------|
 | 1.02 | NPIA00005 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR<br>DYNFILES.BAR<br>SPURIOUS.BAR<br>ARCADEPUZZLE.BAR<br>CHESS_DRAUGHTS.BAR<br>SCENE_CINEMA_AUDITORIUM.BAR<br>JAVA.BAR<br>OBJECTS_DEFAULT_AVATAR.BAR | | NPIA00005 01.02.pkg |
+| 1.01 | NPIA00005 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR<br>DYNFILES.BAR<br>SPURIOUS.BAR<br>ARCADEPUZZLE.BAR<br>CHESS_DRAUGHTS.BAR<br>SCENE_CINEMA_AUDITORIUM.BAR<br>JAVA.BAR<br>OBJECTS_DEFAULT_AVATAR.BAR |bloberino||
 | 1.00 | NPIA00005 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR<br>DYNFILES.BAR<br>SPURIOUS.BAR<br>ARCADEPUZZLE.BAR<br>CHESS_DRAUGHTS.BAR<br>SCENE_CINEMA_AUDITORIUM.BAR<br>JAVA.BAR<br>OBJECTS_DEFAULT_AVATAR.BAR | | NPIA00005 01.00.pkg |
 | 0.98 | NPIA00005 | NPBOOT.BAR<br>DYNFILES.BAR<br>SHADERS.BAR<br>JAVA.BAR<br>SCENE_APARTMENT.BAR<br>SCENE_CINEMA_AUDITORIUM.BAR<br>OBJECTS_DEFAULT_AVATAR.BAR<br>ARCADEBOUNCER.BAR<br>ARCADESTOCKCAR.BAR<br>ARCADEEVAC.BAR<br>ARCADEPUZZLE.BAR | | NPIA00005 00.98.pkg |
 | 0.94 | NPEA00013 | NPBOOT.BAR<br>DYNFILES.BAR<br>SHADERS.BAR<br>JAVA.BAR<br>SCENE_APARTMENT.BAR<br>SCENE_CINEMA_AUDITORIUM.BAR<br>OBJECTS_DEFAULT_AVATAR.BAR<br>ARCADEBOUNCER.BAR<br>ARCADESTOCKCAR.BAR<br>ARCADEEVAC.BAR<br>ARCADEPUZZLE.BAR | | NPEA00013 Beta 00.94.pkg |
@@ -431,7 +433,7 @@ USRDIR/CACHE/
 <details>
 <summary><b>GDC DEMO</b></summary>
 -
-	
+
 **`BAR ARCHIVES WITH NO ENCRYPTION :`**
 | Version | Title ID | Archives | Cache References | PKG References |
 |----------|-----------|----------|----------|----------|
@@ -442,7 +444,7 @@ USRDIR/CACHE/
 <details>
 <summary><b>CONTENT BETA</b></summary>
 -
-	
+
 **`💡 Note: Content Betas are more Retail in nature but differ slightly. While TTY functionality is disabled, they still retain developer-like console commands seen in QA and HDK builds.`**
 
 **`BAR ARCHIVES WITH SHARC ENCRYPTION :`**
@@ -453,7 +455,9 @@ USRDIR/CACHE/
 **`BAR ARCHIVES WITH NO ENCRYPTION :`**
 | Version | Title ID | Archives | Cache References | PKG References |
 |----------|-----------|----------|----------|----------|
-| 1.75 | NPEA00013 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR | JrMans2<br>Megalia |NPEA00013 Beta 1.75.pkg|
+| 1.75 | NPEA00013 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR | JrMans2<br>Matthew_Warner |NPEA00013 Beta 1.75.pkg|
+| 1.65 | NPEA00013 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR ||NPEA00013 Beta 1.65.pkg|
+| 1.60 | NPEA00013 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR | Keonis2 ||
 | 1.55 | NPEA00013 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR ||NPEA00013 Beta 1.55.pkg|
 | 1.35 | NPEA00013 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>POOL_BOWLING.BAR<br>DYNFILES.BAR<br>SPURIOUS.BAR ||Home013518beta.pkg|
 
@@ -461,11 +465,11 @@ USRDIR/CACHE/
 <details>
 <summary><b>DEVELOPER - HDK</b></summary>
 -
-	
+
 **`BAR ARCHIVES WITH NO ENCRYPTION :`**
 | Version | Title ID | Archives | Cache References | PKG References | 
 |----------|-----------|----------|----------|----------|
-| 1.86 | NPIA00010 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>LOCAL_CORE_OBJECTS.BAR<br>CONFIG_HDK.BAR<br>DEV_ARCHIVE.BAR|QuantumDoja2<br>Soul4DECH2500|HomeDeveloperBuild186.pkg|
+| 1.86 | NPIA00010 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>LOCAL_CORE_OBJECTS.BAR<br>CONFIG_HDK.BAR<br>DEV_ARCHIVE.BAR|JamesCoxDECRDump<br>Soul5|HomeDeveloperBuild186.pkg|
 | 1.82 | NPIA00010 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>LOCAL_CORE_OBJECTS.BAR<br>CONFIG_HDK.BAR<br>DEV_ARCHIVE.BAR|PixelButts|
 | 1.80 | NPIA00010 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>LOCAL_CORE_OBJECTS.BAR<br>CONFIG_HDK.BAR<br>DEV_ARCHIVE.BAR||HomeDeveloperBuild_180.pkg|
 | 1.75 | NPIA00010 | COREDATA.BAR<br>SHADERS.BAR<br>SCENE_APARTMENT.BAR<br>LOCAL_CORE_OBJECTS.BAR<br>CONFIG_HDK.BAR<br>DEV_ARCHIVE.BAR||HomeDeveloperBuild_175.pkg|
@@ -486,11 +490,11 @@ USRDIR/CACHE/
 <details>
 <summary><b>DEVELOPER - QA</b></summary>
 -
-	
+
 **`BAR ARCHIVES WITH SHARC ENCRYPTION :`**
 | Version | Title ID | Archives | Cache References | PKG References | 
 |----------|-----------|----------|----------|----------|
-| 1.86 | NPIA00005 | COREDATA.SHARC<br>SHADERS.SHARC<br>SCENE_APARTMENT.SHARC<br>CORE_OBJECTS.SHARC |QuantumDoja1|
+| 1.86 | NPIA00005 | COREDATA.SHARC<br>SHADERS.SHARC<br>SCENE_APARTMENT.SHARC<br>CORE_OBJECTS.SHARC |JamesCoxDECRDump|
 | 1.85 | NPIA00005 | COREDATA.SHARC<br>SHADERS.SHARC<br>SCENE_APARTMENT.SHARC |Soul3|
 
 **`BAR ARCHIVES WITH NO ENCRYPTION :`**
