@@ -101,20 +101,21 @@ The batch script calls the following scripts, all of which are required for prop
 
 1) BIN\DEFINF2.0\DEINF2.0.exe - C# INF decrypter and logger
 
+- The DEINF2.0.exe uses Net 6
+  - https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-6.0.428-windows-x64-installer
+
 - Github repositories utilized :
 
-1) Nautilus -> https://github.com/GitHubProUser67/NautilusXP2024
-
-- ToolsImplentation.cs, OtherExtensions.cs, & LIBSECRE.cs
-3) BouncyCastle -> https://github.com/bcgit/bc-csharp
-4) ShellProgressBar -> https://github.com/Mpdreamz/shellprogressbar
-
-- The DEINF2.0.exe uses Net 6 -> https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-6.0.428-windows-x64-installer
+  1) Nautilus -> https://github.com/GitHubProUser67/NautilusXP2024
+     
+      - ToolsImplentation.cs, OtherExtensions.cs, & LIBSECRE.cs
+  1) BouncyCastle -> https://github.com/bcgit/bc-csharp
+  2) ShellProgressBar -> https://github.com/Mpdreamz/shellprogressbar
 
 2) Python based EXEs built from the CX-Freeze Python library.
-- CX-Freeze Info -> https://cx-freeze.readthedocs.io/en/stable/
-- Python 3.11 itself gets bundled into the BIN\PSHomeCacheTools\lib\ folder.
-- The Pillow Python Library is also utilized here -> https://pypi.org/project/pillow/
+  - CX-Freeze Info -> https://cx-freeze.readthedocs.io/en/stable/
+  - Python 3.11 itself gets bundled into the BIN\PSHomeCacheTools\lib\ folder.
+  - The Pillow Python Library is also utilized here -> https://pypi.org/project/pillow/
 
 - BIN\PSHomeCacheTools\   
 ├── file_analysis.exe   
