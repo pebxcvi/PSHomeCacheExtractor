@@ -353,13 +353,15 @@ USRDIR/CACHE/
 
   - SHARC encryption consists of three layers :
 
-**`Layer 1:`** AES256 encryption applied to both the Header ( Metadata section at the beginning of each archive ) and the TOC ( Table of Contents; lookup table containing metadata such as file offsets, sizes, compression types, along with the Keys and IVs used for the custom XTEA encryption ). The Header is decrypted first using AES256, followed by the TOC. The TOC is then decrypted with the same AES key and an incremented IV to reveal each file's Key and IV used in the custom XTEA encryption
+    - **`Layer 1:`** AES256 encryption applied to both the Header ( Metadata section at the beginning of each archive ) and the TOC ( Table of Contents; lookup table containing metadata such as file offsets, sizes, compression types, along with the Keys and IVs used for the custom XTEA encryption ). The Header is decrypted first using AES256, followed by the TOC. The TOC is then decrypted with the same AES key and an incremented IV to reveal each file's Key and IV used in the custom XTEA encryption
 
-**`Layer 2:`** Custom XTEA encryption applied individually to each file using its own unique Key and IV ( Values retrieved from the decrypted TOC )
+    - **`Layer 2:`** Custom XTEA encryption applied individually to each file using its own unique Key and IV ( Values retrieved from the decrypted TOC )
 
-**`Layer 3:`** EdgeZlib compression applied to each file's data prior to encryption
+    - **`Layer 3:`** EdgeZlib compression applied to each file's data prior to encryption
 
   - LUA files were encrypted in an additional Blowfish-based layer indicated by a flag in the TOC
+ 
+  - Sony transitioned the contentserver URL on the TSS from `c.home/prod/live/` to `c.home/prod2/live2/` in March 2014, roughly six months after the initial rollout of SHARC encryption support in mid-October 2013. The act of changing the contentserver URL reset everyone's CACHE folders. During this transition, all SDAT archives were repacked from NPDRM 2.2/2.4 into NPDRM 4.0 with the SHARC encryption. 
 
 ### 11) Configs_*lang*.SHARC
 - BAR Archive with SHARC encryption described above
