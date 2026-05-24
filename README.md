@@ -343,15 +343,15 @@ USRDIR/CACHE/
 
 - **BAR Archive with Sony NPDRM encryption only; Used prior to October 2013**
 
-- SDATA V2.4 and V2.2
+  - SDATA V2.4 and V2.2
 
-- From version 1.35 onwards, LUA files were encrypted using an Encryption Proxy layer that applied Blowfish-based encryption and EdgeZlib compression. It was indicated by a flag in the TOC ( Table of Contents )
+  - From version 1.35 onwards, LUA files were encrypted using an Encryption Proxy layer that applied Blowfish-based encryption and EdgeZlib compression. It was indicated by a flag in the TOC ( Table of Contents )
 
 - **BAR Archive with Sony NPDRM and SHARC encryption; Used Mid-October 2013 onwards**
 
-- SDATA V4.0 and V2.4
+  - SDATA V4.0 and V2.4
 
-- SHARC encryption consists of three layers :
+  - SHARC encryption consists of three layers :
 
 **`Layer 1:`** AES256 encryption applied to both the Header ( Metadata section at the beginning of each archive ) and the TOC ( Table of Contents; lookup table containing metadata such as file offsets, sizes, compression types, along with the Keys and IVs used for the custom XTEA encryption ). The Header is decrypted first using AES256, followed by the TOC. The TOC is then decrypted with the same AES key and an incremented IV to reveal each file's Key and IV used in the custom XTEA encryption
 
