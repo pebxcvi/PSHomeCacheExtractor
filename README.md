@@ -361,7 +361,7 @@ USRDIR/CACHE/
 
   - LUA files were encrypted in an additional Blowfish-based layer indicated by a flag in the TOC
  
-  - Sony transitioned the contentserver URL on the TSS from `c.home/prod/live/` to `c.home/prod2/live2/` in March 2014, roughly six months after the initial rollout of SHARC encryption support in mid-October 2013. The act of changing the contentserver URL reset everyone's CACHE folders. During this transition, all SDAT archives were repacked from NPDRM 2.2/2.4 into NPDRM 4.0 with the SHARC encryption. 
+  - Sony transitioned the contentserver URL on the TSS from `c.home/prod/live/` to `c.home/prod2/live2/` in March 2014, roughly six months after the initial rollout of SHARC encryption support in mid-October 2013. The act of changing the contentserver URL reset everyone's CACHE folders. During this transition, all SDAT archives were repacked from NPDRM 2.2/2.4 into NPDRM 4.0 with the SHARC encryption. The TSS also had an entry to block all non SHARC encrypted SDAT archives. ( `<disablebar />` )
 
 ### 11) Configs_*lang*.SHARC
 - BAR Archive with SHARC encryption described above
