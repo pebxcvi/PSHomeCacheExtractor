@@ -359,7 +359,7 @@ USRDIR/CACHE/
 
 **`Layer 3:`** EdgeZlib compression applied to each file's data prior to encryption
 
-- LUA files were encrypted in an additional Blowfish-based layer indicated by a flag in the TOC
+  - LUA files were encrypted in an additional Blowfish-based layer indicated by a flag in the TOC
 
 ### 11) Configs_*lang*.SHARC
 - BAR Archive with SHARC encryption described above
