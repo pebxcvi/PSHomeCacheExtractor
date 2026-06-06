@@ -5,9 +5,12 @@ Changes/Updates Log :
 V3.6.1
 - Updated OBJECT_QUERY.txt.
 - Added icon for the DEINF2.0 executable.
-- In DEINF2.0, I added support for the drag and drop of multiple INF files or multiple folders. This is so it can act as an independent INF logger outside of the batch controller.
-		- When you first click on the executable or drag/drop a folder/file ontop of it, it will produce a .ini configuration file.
-       config-deinf.ini:
+- In DEINF2.0, I added support for the drag and drop of multiple INF files or multiple folders.
+		This is so it can act as an independent INF logger outside of the batch controller.
+		When running either executable for the first time, it will automatically generate a configuration .ini file beside it.
+		Each configuration file contains detailed comments explaining the available settings and options.
+
+       config-deinf.ini
 
          pauseonexit=true
             - Pauses before closing.
@@ -25,7 +28,7 @@ V3.6.1
          cachelogoutputfolder=INFLOGS
             - Used when the dropped folder is named CACHE.
             - Takes full or relative path of folder.
-            - Creates separate logs into cachelogoutputfolder based on the subfolders:
+            - Creates separate logs into cachelogoutputfolder based on the subfolders :
                 CLANS
                 GLOBALS
                 HTTP
