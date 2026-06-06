@@ -7,8 +7,8 @@ V3.6.1
 - Added icon for the DEINF2.0 executable.
 - In DEINF2.0, I added support for the drag and drop of multiple INF files or multiple folders.
 		This is so it can act as an independent INF logger outside of the batch controller.
-		When running either executable for the first time, it will automatically generate a configuration .ini file beside it.
-		Each configuration file contains detailed comments explaining the available settings and options.
+		When running the executable for the first time, it will automatically generate a configuration .ini file beside it.
+		The configuration file contains detailed comments explaining the available settings and options.
 
        config-deinf.ini
 
