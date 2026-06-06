@@ -99,7 +99,9 @@ You can find individual download links here. ( [Google Sheets](https://docs.goog
 
 The batch script calls the following scripts, all of which are required for proper operation :
 
-### 1) BIN\DEFINF2.0\DEINF2.0.exe - C# INF decrypter and logger
+### DEINF2.0
+
+1) BIN\DEFINF2.0\DEINF2.0.exe - C# INF decrypter and logger
 
 - DEINF2.0 has a drag-and-drop mode, allowing it to act as an independent INF logger outside of the batch controller. Simply drag and drop INF files or entire folders ontop of the executable.
   
@@ -154,7 +156,9 @@ The batch script calls the following scripts, all of which are required for prop
   1) BouncyCastle -> https://github.com/bcgit/bc-csharp
   2) ShellProgressBar -> https://github.com/Mpdreamz/shellprogressbar
 
-### 2) Python based EXEs built from the CX-Freeze Python library.
+### Python based EXEs
+
+2) Python based EXEs built from the CX-Freeze Python library.
   - CX-Freeze Info -> https://cx-freeze.readthedocs.io/en/stable/
   - Python 3.11 itself gets bundled into the BIN\PSHomeCacheTools\lib\ folder.
   - The Pillow Python Library is also utilized here -> https://pypi.org/project/pillow/
@@ -169,11 +173,15 @@ The batch script calls the following scripts, all of which are required for prop
 ├── merge_inflogs.exe   
 └── custom_query.exe
 
-### 3) BIN\ffprobe.exe
+### ffprobe
+
+3) BIN\ffprobe.exe
 - Download -> https://github.com/BtbN/FFmpeg-Builds/releases
 - Info -> https://www.ffmpeg.org/ffprobe.html
 
-### 4) BIN\JREPL\JREPL.BAT - Batch/Jscript Hybrid
+### JREPL
+
+4) BIN\JREPL\JREPL.BAT - Batch/Jscript Hybrid
 - Created by dbenham -> https://stackoverflow.com/users/1012053/dbenham
 
 ## Cache Breakdown
