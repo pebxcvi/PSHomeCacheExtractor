@@ -2,6 +2,49 @@ PSHome Cache Extractor
 
 Changes/Updates Log :
 
+V3.6.1
+- Updated OBJECT_QUERY.txt.
+- Added icon for the DEINF2.0 executable.
+- In DEINF2.0, I added support for the drag and drop of multiple INF files or multiple folders. This is so it can act as an independent INF logger outside of the batch controller.
+		- When you first click on the executable or drag/drop a folder/file ontop of it, it will produce a .ini configuration file.
+       config-deinf.ini:
+
+         pauseonexit=true
+            - Pauses before closing.
+
+         recursive=true
+            - Searches dropped folders recursively.
+
+         loginfo=true
+            - Creates INF log output.
+
+         defaultlogfile=log.txt
+            - Used when the dropped folder/file is not named CACHE.
+            - Takes full or relative path of file.
+
+         cachelogoutputfolder=INFLOGS
+            - Used when the dropped folder is named CACHE.
+            - Takes full or relative path of folder.
+            - Creates separate logs into cachelogoutputfolder based on the subfolders:
+                CLANS
+                GLOBALS
+                HTTP
+                OBJECTDEFS
+                OBJECTDYNAMIC
+                OBJECTTHUMBS
+                PROFILE
+                SCENES
+                VIDEO
+                WORLDMAP
+
+         savefiles=false
+            - Saves decrypted INF files.
+
+         fileoutputfolder=DECRYPTED
+            - Output folder used only when savefiles=true.
+            - Takes full or relative path of folder.
+            - Preserves the dropped folder structure.
+
 V3.6.0
 - In DEFIN2.0, I fixed a bug where it would error for uri paths that contains a genuine "cache/".
 - Cleaned up the start of batch script that distinguishes between Single Cache Mode or Unlimited Cache Mode.
@@ -22,7 +65,7 @@ V3.5.8
 V3.5.7
 
 - In log_thumbnails.py, I added new entries in the SCENE_PATTERNS array.
-- Added a field in the log_CACHE_VERS.log that logs all the CORE FILES. 
+- Added a field in the log_CACHE_VERS.log that logs all the CORE FILES.
 
 V3.5.6
 
@@ -50,7 +93,7 @@ V3.5.5
 
 V3.5.0
 
-- ! BRAND NEW : The logging of object and scene sdats ( Option 1 ) are now using a new python based exe ( log_sdats.exe ) for all modes. 
+- ! BRAND NEW : The logging of object and scene sdats ( Option 1 ) are now using a new python based exe ( log_sdats.exe ) for all modes.
 		- The fields of both logs have been adjusted slightly:
 				 - Removed the "Root folder" field.
 				 - Removed extensions from the file name field and put them into a entirely separate field.
@@ -60,7 +103,7 @@ V3.5.0
 				 - Adjusted the live(2) to include the correct values for for betas, HDKs, and QAs caches.
 				 - Added field for the SDATA version. It searches for the corresponding DAT numbers using the INF hash within each CACHE/OBJECTDEFS and CACHE/SCENES folders.
 
-- ! BRAND NEW : The merging and cleaning up of the INF logs is now using a new python based exe ( merge_inflogs.exe ) for all modes. 
+- ! BRAND NEW : The merging and cleaning up of the INF logs is now using a new python based exe ( merge_inflogs.exe ) for all modes.
 		- Removed several string replacements for special characters !, & ,$, %, (, ), %20, and spaces  ; Logged as is. "%20" turns into a space.
 		- Fixed a few issues with some dates where it logged weird strings instead of setting the date to null.
 
@@ -68,8 +111,8 @@ V3.5.0
 
 - ! BRAND NEW : The Unlimited Cache Combined Mode ( Regular ( Option 2 ) and Verbose ( Option 5 ) ) is now using a new python based exe ( cache_copy_combined.exe ) for the copying of cache.
 		- The python script from the file_analysis.exe was integrated into the cache_copy_combined.exe, so eventually, file_analysis.exe will get depreciated.
-		
-- Adjusted some strings in JREPLStrings.txt for custom queries ( The JPG and MP4 queries ); Added a "all media" query. 
+
+- Adjusted some strings in JREPLStrings.txt for custom queries ( The JPG and MP4 queries ); Added a "all media" query.
 
 - Added a third directory where the BIN folder can get picked up.
 
@@ -78,7 +121,7 @@ V3.5.0
 - For Unlimted Cache Seperate Mode, added an override ( 1O ) to option 1. Entering 1O will delete log_OBJECTDEFS_ALL.log and log_SCENES_ALL.log within each cache.
 
 V3.4.0
-- ! BRAND NEW : The Single Cache Mode ( Regular ( Option 2 ), Verbose ( Option 5 ), and Custom Query ( Option 3 ) ) and the Unlimited Cache Separate Mode ( Regular ( Option 2 ) and Verbose ( Option 4 ) ) 
+- ! BRAND NEW : The Single Cache Mode ( Regular ( Option 2 ), Verbose ( Option 5 ), and Custom Query ( Option 3 ) ) and the Unlimited Cache Separate Mode ( Regular ( Option 2 ) and Verbose ( Option 4 ) )
 		are now using a new python based exe ( cache_copy_single.exe ) for the copying of cache.
 	- The python script from the file_analysis.exe was integrated into the cache_copy_single.exe, so eventually, file_analysis.exe will get depreciated.
 
