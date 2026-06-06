@@ -9,7 +9,7 @@
 ...
 ## Overview
 
-For each data file within a PlayStation®Home Cache, there is an associated "INF" file of the same name. Each INF file includes the data file’s original path, file name, and, in many cases, a date.
+For each data file within a PlayStation®Home Cache, there is an associated "INF" file of the same name. Each INF file includes the data file's original path, file name, and, in many cases, a date.
 
 Some INF files are encrypted, while others from older versions of PlayStation®Home are already decrypted.
 
