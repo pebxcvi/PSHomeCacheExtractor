@@ -5,6 +5,8 @@ Changes/Updates Log :
 V3.6.1
 - Updated OBJECT_QUERY.txt.
 - Added icon for the DEINF2.0 executable.
+- In DEINF2.0, removed DecryptionHandler.cs then added DecryptOrCopy() into ToolsImplementation.cs.
+- In DEINF2.0, updated Crypt_Decrypt in LIBSECURE.cs.
 - In DEINF2.0, I added support for the drag and drop of multiple INF files or multiple folders.
 		This is so it can act as an independent INF logger outside of the batch controller.
 		When running the executable for the first time, it will automatically generate a configuration .ini file beside it.

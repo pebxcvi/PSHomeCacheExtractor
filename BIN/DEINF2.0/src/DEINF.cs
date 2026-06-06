@@ -793,7 +793,7 @@ class DEINF
 
                         Directory.CreateDirectory(thisFileOutput);
 
-                        DecryptionHandler.DecryptOrCopy(file, thisFileOutput, false);
+                        ToolsImplementation.DecryptOrCopy(file, thisFileOutput, false);
                     }
 
                     if (logInfo)
@@ -1041,7 +1041,7 @@ class DEINF
 
                         Directory.CreateDirectory(thisFileOutput);
 
-                        DecryptionHandler.DecryptOrCopy(file, thisFileOutput, false);
+                        ToolsImplementation.DecryptOrCopy(file, thisFileOutput, false);
                     }
 
                     if (logInfo)
@@ -1252,7 +1252,7 @@ class DEINF
         Console.WriteLine("  cachelogoutputfolder=INFLOGS");
         Console.WriteLine("     - Used when the dropped folder is named CACHE.");
         Console.WriteLine("     - Takes full or relative path of folder.");
-        Console.WriteLine("     - Creates separate logs into cachelogoutputfolder based on the subfolders:");
+        Console.WriteLine("     - Creates separate logs into cachelogoutputfolder based on the subfolders :");
         Console.WriteLine("         CLANS");
         Console.WriteLine("         GLOBALS");
         Console.WriteLine("         HTTP");
