@@ -101,10 +101,52 @@ The batch script calls the following scripts, all of which are required for prop
 
 1) BIN\DEFINF2.0\DEINF2.0.exe - C# INF decrypter and logger
 
-- The DEINF2.0.exe uses Net 6
+- DEINF2.0 has a drag-and-drop mode, allowing it to act as an independent INF logger outside of the batch controller. Simply drag and drop INF files or entire folders ontop of the executable.
+  
+  - When running the executable for the first time, it will automatically generate a configuration .ini file beside it. The configuration file contains detailed comments explaining the available settings and options.
+
+config-deinf.ini
+```
+pauseonexit=true
+   - Pauses before closing.
+
+recursive=true
+   - Searches dropped folders recursively.
+
+loginfo=true
+   - Creates INF log output.
+
+defaultlogfile=log.txt
+   - Used when the dropped folder/file is not named CACHE.
+   - Takes full or relative path of file.
+
+cachelogoutputfolder=INFLOGS
+   - Used when the dropped folder is named CACHE.
+   - Takes full or relative path of folder.
+   - Creates separate logs into cachelogoutputfolder based on the subfolders :
+       CLANS
+       GLOBALS
+       HTTP
+       OBJECTDEFS
+       OBJECTDYNAMIC
+       OBJECTTHUMBS
+       PROFILE
+       SCENES
+       VIDEO
+       WORLDMAP
+
+savefiles=false
+   - Saves decrypted INF files.
+
+fileoutputfolder=DECRYPTED
+   - Output folder used only when savefiles=true.
+   - Takes full or relative path of folder.
+   - Preserves the dropped folder structure.
+```
+- DEINF2.0 ues Net 6
   - https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-6.0.428-windows-x64-installer
 
-- Github repositories utilized :
+- DEINF2.0 utilizes the following Github repositories  :
 
   1) Nautilus -> https://github.com/GitHubProUser67/NautilusXP2024
      
