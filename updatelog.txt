@@ -2,6 +2,11 @@ PSHome Cache Extractor
 
 Changes/Updates Log :
 
+V3.6.2
+- Updated OBJECT_QUERY.txt.
+- JREPLStrings.txt.
+- For object sdat checker, added support for bar files and added --debug param.
+
 V3.6.1
 - Updated OBJECT_QUERY.txt.
 - Added icon for the DEINF2.0 executable.

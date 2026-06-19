@@ -8,7 +8,6 @@
 (.*CommercePoints.*)(.*.xml.*)	$txt=$1+$2	'$^'	COMMERCE POINTS
 (.*VERS_.*)(.*xml.*)	$txt=$1+$2	'$^'	SCENE VERSION XMLS
 (.*config.xml.*)	$txt=$1	'$^'	CONFIG XML
-(.*VERS_.*)(.*xml.*)	$txt=$1+$2	'$^'	SCENE VERSION XMLS
 (.*ProfanityDictionary.*)(.*.BIN.*)	$txt=$1+$2	'$^'	PROFANITYDICTIONARIES
 (.*ServiceIDs.*)(.*.xml.*)	$txt=$1+$2	'$^'	SERVICE IDS
 (.*(SaveDataService\/avatar.*\.jpg|Avatar-.*\.jpg).*)	$txt=$1	/.*e.home.*/i	AVATAR PFP
@@ -22,7 +21,7 @@
 (.*\.jpeg.*)	$txt=$1	/.*c.home.*/i	JPEG
 (.*\.(mp4|mp3|m4v|dds|png|jpg|jpeg).*)	$txt=$1	/c\.home|^alpha\.lootgear\.com\/moviedb.*\.mp4|SaveDataService\/avatar.*\.jpg|Avatar-.*\.jpg/i	MEDIA
 (.*\.hsml.*)	$txt=$1	/.*c.home.*/i	HSTML
-(.*\.do.*)	$txt=$1	/c\.home|^www\.doublesixgames\.com.*\.(mp4|dds)/i	PACONTROLLERS
+(.*\.do.*)	$txt=$1	/c\.home|www\.doublesixgames\.com.*\.(mp4|dds)/i	PACONTROLLERS
 (.*/helptext/.*)	$txt=$1	'$^'	HELPTEXT
 (.*(NPWR00432|NPIA00005|/clan/).*)	$txt=$1	'$^'	CLUBHOUSE XML
 (.*objects/(90B121DD-33C94336-83D3F23C-78699CE5|F14C0D58-A3934173-99C50269-84DCB78C|EB6ECA9F-389B4140-96F12563-BE7264F8).*\.(txt|xml).*)	$txt=$1	/.*c.home.*/i	MOTD AND NEWSVIEWER
@@ -38,3 +37,10 @@
 (.*(?:homeps3-content\.online\.scee\.com|c\.home))(.*)(/scenes.*?)(\.sdc)(.*)	$txt=$1+$2+$3+$4+$5	'$^'	SCENE_SDC
 (.*(?:homeps3-content\.online\.scee\.com|c\.home))(.*)(/objects.*?)(\.png)(.*)	$txt=$1+$2+$3+$4+$5	'$^'	OBJECT_THUMB
 (.*(?:homeps3-content\.online\.scee\.com|c\.home))(.*)(/scenes.*?)(\.png)(.*)	$txt=$1+$2+$3+$4+$5	'$^'	SCENE_THUMB
+(.*flickr\..*)	$txt=$1	/.*c.home.*/i	flickr
+(.*alpha.lootgear.com.*)	$txt=$1	'$^'	alpha.lootgear.com
+(.*cdn.bdliveplatform.com.*)	$txt=$1	'$^'	cdn.bdliveplatform.com
+(.*(?:homeps3-content\.online\.scee\.com|c\.home))(.*)(/legal.*?)(\.(mp4|mp3|m4v|dds|png|jpg|jpeg))(.*)	$txt=$1+$2+$3+$4+$6	'$^'	Legal
+(.*\.txt.*)	$txt=$1	'$^'	TXT
+(.*(?:homeps3-content\.online\.scee\.com))(.*)(/objects.*)	$txt=$1+$2+$3	/.*ObjectCatalogue.*/i	DEV
+(.*(?:c\.home\/beta))(.*)(/objects.*)	$txt=$1+$2+$3	/.*ObjectCatalogue.*/i	BETA

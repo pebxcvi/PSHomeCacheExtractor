@@ -6085,7 +6085,6 @@ ECHO:(.*e.home.*)(.*/RSS_Feeds.*)	$txt=$1+$2	'$^^'	RSS FEEDS
 ECHO:(.*CommercePoints.*)(.*.xml.*)	$txt=$1+$2	'$^^'	COMMERCE POINTS
 ECHO:(.*VERS_.*)(.*xml.*)	$txt=$1+$2	'$^^'	SCENE VERSION XMLS
 ECHO:(.*config.xml.*)	$txt=$1	'$^^'	CONFIG XML
-ECHO:(.*VERS_.*)(.*xml.*)	$txt=$1+$2	'$^^'	SCENE VERSION XMLS
 ECHO:(.*ProfanityDictionary.*)(.*.BIN.*)	$txt=$1+$2	'$^^'	PROFANITYDICTIONARIES
 ECHO:(.*ServiceIDs.*)(.*.xml.*)	$txt=$1+$2	'$^^'	SERVICE IDS
 ECHO:(.*(SaveDataService\/avatar.*\.jpg^|Avatar-.*\.jpg).*)	$txt=$1	/.*e.home.*/i	AVATAR PFP
@@ -6099,7 +6098,7 @@ ECHO:(.*\.jpg.*)	$txt=$1	/c\.home^|SaveDataService\/avatar.*\.jpg^|Avatar-.*\.jp
 ECHO:(.*\.jpeg.*)	$txt=$1	/.*c.home.*/i	JPEG
 ECHO:(.*\.(mp4^|mp3^|m4v^|dds^|png^|jpg^|jpeg).*)	$txt=$1	/c\.home^|^^alpha\.lootgear\.com\/moviedb.*\.mp4^|SaveDataService\/avatar.*\.jpg^|Avatar-.*\.jpg/i	MEDIA
 ECHO:(.*\.hsml.*)	$txt=$1	/.*c.home.*/i	HSTML
-ECHO:(.*\.do.*)	$txt=$1	/c\.home^|^www\.doublesixgames\.com.*\.(mp4^|dds)/i	PACONTROLLERS
+ECHO:(.*\.do.*)	$txt=$1	/c\.home^|www\.doublesixgames\.com.*\.(mp4^|dds)/i	PACONTROLLERS
 ECHO:(.*/helptext/.*)	$txt=$1	'$^^'	HELPTEXT
 ECHO:(.*(NPWR00432^|NPIA00005^|/clan/).*)	$txt=$1	'$^^'	CLUBHOUSE XML
 ECHO:(.*objects/(90B121DD-33C94336-83D3F23C-78699CE5^|F14C0D58-A3934173-99C50269-84DCB78C^|EB6ECA9F-389B4140-96F12563-BE7264F8).*\.(txt^|xml).*)	$txt=$1	/.*c.home.*/i	MOTD AND NEWSVIEWER
@@ -6115,6 +6114,14 @@ ECHO:(.*(?:homeps3-content\.online\.scee\.com^|c\.home))(.*)(/objects.*?)(\.odc)
 ECHO:(.*(?:homeps3-content\.online\.scee\.com^|c\.home))(.*)(/scenes.*?)(\.sdc)(.*)	$txt=$1+$2+$3+$4+$5	'$^^'	SCENE_SDC
 ECHO:(.*(?:homeps3-content\.online\.scee\.com^|c\.home))(.*)(/objects.*?)(\.png)(.*)	$txt=$1+$2+$3+$4+$5	'$^^'	OBJECT_THUMB
 ECHO:(.*(?:homeps3-content\.online\.scee\.com^|c\.home))(.*)(/scenes.*?)(\.png)(.*)	$txt=$1+$2+$3+$4+$5	'$^^'	SCENE_THUMB
+ECHO:(.*flickr\..*)	$txt=$1	/.*c.home.*/i	flickr
+ECHO:(.*alpha.lootgear.com.*)	$txt=$1	'$^^'	alpha.lootgear.com
+ECHO:(.*cdn.bdliveplatform.com.*)	$txt=$1	'$^^'	cdn.bdliveplatform.com
+ECHO:(.*(?:homeps3-content\.online\.scee\.com^|c\.home))(.*)(/legal.*?)(\.(mp4^|mp3^|m4v^|dds^|png^|jpg^|jpeg))(.*)	$txt=$1+$2+$3+$4+$6	'$^^'	Legal
+ECHO:(.*\.txt.*)	$txt=$1	'$^^'	TXT
+ECHO:(.*(?:homeps3-content\.online\.scee\.com))(.*)(/objects.*)	$txt=$1+$2+$3	/.*ObjectCatalogue.*/i	DEV
+ECHO:(.*(?:c\.home\/beta))(.*)(/objects.*)	$txt=$1+$2+$3	/.*ObjectCatalogue.*/i	BETA
+
 EXIT /B
 
 :CREATE_exceptions_corrupted
