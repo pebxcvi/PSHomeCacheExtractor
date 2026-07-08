@@ -145,7 +145,7 @@ The batch script calls the following scripts, all of which are required for prop
        - Takes full or relative path of folder.
        - Preserves the dropped folder structure.
     ```
-- DEINF2.0 ues Net 6
+- DEINF2.0 uses Net 6
   - https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-6.0.428-windows-x64-installer
 
 - DEINF2.0 utilizes the following Github repositories  :
